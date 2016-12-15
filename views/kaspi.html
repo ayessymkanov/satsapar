@@ -1,0 +1,11 @@
+﻿<form id="SendOrder" method="post" data-bind="attr:{action: actionlink}">
+    <input type="hidden" name="Amount" data-bind="value: totalpayment" />
+    <input type="hidden" name="OrderId" data-bind="value: orderFKCId" />
+    <input type="hidden" name="returnUrl" value="http://212.154.211.7/Booking/KaspiResult/" />
+    <input type="hidden" name="Service" value="ITSB" />
+    <input type="hidden" name="Signature" data-bind="value: signtext" />
+    <input type="hidden" name="TranId" data-bind="value: tranid" />
+    <div id="kaspi-but" class="col-md-12 col-xs-12 ">
+        <a data-bind="click: $root.sendform"><img data-bind="attr:{src: imagePath}" /></a>
+    </div>
+</form>

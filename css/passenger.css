@@ -1,0 +1,335 @@
+@media (max-width:800px) {
+.nationality{
+  width: 100%;
+}
+    .drop-down-img {
+        margin-top: -2px !important;
+    }
+    #train-info div,.odd-col {
+        /*padding:2px !important;*/
+    }
+    #rule-info.in,
+    #ruleinfo.collapsing {
+      display: block!important;
+    }
+}
+
+#train-info{
+	background-color: rgb(122, 213, 217);
+	z-index: 484;
+}
+#train-info .row {
+	color: rgb(255, 255, 255) !important;
+}
+#train-info > .odd-row,
+.passenger-data .odd-row{
+	background-color: rgba(0, 0, 0, 0.051);
+	z-index: 486;
+}
+
+.even-col{
+	background-color: rgba(0, 0, 0, 0.051);
+	z-index: 485;
+	background-size: contain;
+  padding: 10px
+}
+
+.odd-col {
+  padding: 10px
+}
+
+#passenger-main-body .row{
+	color:#3b666b;
+}
+#passenger-main-bodymobile .row {
+	color:#3b666b;
+
+}
+
+.highlighted-background {
+  background-color: rgba(50, 83, 88, 0.149);
+}
+
+.range-box {
+   width: 23px;
+   height: 25px;
+   text-align: center;
+}
+.input-box-info{
+	border-width: 1px;
+  border-color: rgb(50, 83, 88);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+}
+#schema-wagon{
+	display: block;
+  	color: rgb(78, 137, 146);
+  	text-decoration: underline;
+  	height: auto;
+}
+#desc-text{
+	display: inline-block;
+	font-size: 14px;
+	color: #3b666b;
+}
+
+#place-range a:hover {
+	background-color: #ffffff;
+}
+
+.passport-caption {
+  font-size: 24px;
+  color: #325358;
+  text-transform: uppercase;
+  display: block;
+  padding: 35px 0px 0px;
+}
+
+@media(max-width: 767px) {
+  .passport-caption {
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .attention-hint {
+    font-size: 13px;
+  }
+
+  .passport-hint {
+    font-size: 13px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+  }
+}
+
+.attention-hint{
+	  font-size: 16px;
+  	color: #ab4444 !important;
+}
+.passport-hint {
+  display: block;
+  margin: 30px 0;
+}
+
+#passenger-main-body .passenger-data  .row{
+	color: #ffffff;
+	padding-left: 12px !important;
+}
+
+.passenger-data{
+  margin-bottom: 20px;
+	background-color:  #7AD5D9;
+}
+
+.site-rules {
+  padding: 20px;
+  color: #35585b;
+  background-color: rgba(73, 122, 127, 0.102);
+}
+.tariff-pass{
+	width: 140px;
+}
+select {
+
+    font-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.passenger-data select,.passenger-data input{
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: #35585b;
+    padding: 5px 30px 5px 10px;
+}
+
+.drop-down-img{
+	position: relative;
+	left: -27px;
+	background-color: #ffffff;
+	width: 25px;
+	 height: 24px;
+	 pointer-events: none;
+	border-radius: 2px;
+
+}
+.number-document{
+	width: 200px;
+}
+.names{
+	width: 100%;
+
+}
+
+@media(max-width: 767px) {
+  .names {
+    margin-bottom: 10px;
+  }
+}
+
+input[type=checkbox]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+
+}
+label{
+	font-weight: inherit;
+
+}
+input[type=checkbox]:not(old) + label{
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('../img/checkbox-passenger.png') no-repeat 0 0;
+
+}
+
+input[type=checkbox]:not(old):checked + label{
+  background-position : 0 -42px;
+}
+.button-pass {
+	display: inline-block;
+	width: auto;
+	padding: 10px 20px;
+	color: #ffffff;
+	font-size: 16px;
+
+}
+
+.button-pass:hover {
+  color: white;
+  background-color: #3b666b;
+}
+
+#email,
+#phone {
+  padding: 5px 10px;
+}
+
+#phone {
+  width: 25%;
+}
+
+#email {
+  width: 33%;
+}
+
+@media(max-width: 767px) {
+  #email,
+  #phone {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.citizenship-select {
+  width: 100%;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper::after {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  font-family: FontAwesome;
+  font-size: 12px;
+  content: "\f078";
+  color: #35585b;
+}
+
+
+.enter-pass-data {
+  margin-bottom: 20px;
+}
+
+.passenger-id {
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: #3b666b;
+  color: white;
+  text-transform: uppercase;
+}
+
+.passenger-info-label {
+  margin-right: 10px;
+}
+
+.values-col {
+  padding: 10px 20px;
+}
+
+.divisor {
+  margin-top: 10px;
+}
+
+label[for="agreeCheckbox"] {
+  margin: 10px 0;
+  color: #ab4444;
+}
+
+.payment-btns {
+  padding: 20px 0;
+}
+
+.site-rules__heading {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.site-rules__p {
+  line-height: 1.6;
+}
+
+.passenger-info-mobile {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+
+}
+
+.input-mobile {
+  width: 100%;
+}
+
+@media(max-width: 767px) {
+  .small-padding {
+    display: block;
+    padding: 5px;
+  }
+  .site-rules__p {
+    line-height: 1.4;
+    font-size: 13px;
+  }
+
+  .site-rules .even-col {
+    background-color: transparent;
+  }
+}
+
+
+.input-padding {
+  padding: 20px 10px;
+}
+
+@media(max-width: 767px) {
+  label[for="agreeCheckbox"] {
+    margin-left: 0 !important;
+  }
+
+  .payment-btn-mobile {
+    margin-bottom: 10px;
+    height: auto !important;
+    font-size: 14px !important;
+    width: 100% !important;
+  }
+}

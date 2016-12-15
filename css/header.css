@@ -1,0 +1,365 @@
+@media  screen and (max-width: 455px) {
+	#headerlinks{
+	min-width: auto !important;
+	max-width: auto !important;
+	width: auto !important;
+	}
+}
+
+/*@media  screen and (max-width: 380px) {
+	#headerlinks{
+	display: none !important;
+	}
+}*/
+@media screen and (max-width:660px) {
+	.phone{
+		display: none;
+	}
+	.logobig{
+		display: none;
+	}
+	.navbar-default .navbar-nav > li >  img{
+		display: none;
+	}
+	.container-fluid > .navbar-collapse  {
+		margin-left: 0px !important;
+	}
+	.navbar-default .navbar-nav  > li > a > div {
+		padding-left: 0px !important;
+		text-align: center !important;
+		width: 100% !important;
+	}
+	.positionleft{
+		margin-left: auto !important;
+	}
+	.header{
+		height: auto !important;
+	}
+}
+
+.navbar {
+	margin-bottom: 0 !important;
+}
+
+@media screen and (max-width:990px) {
+	#stationsdiv{
+	margin-left: auto !important;
+	width: auto !important;
+}
+#rule.in,
+#rule.collapsing,#vozvratdiv.in,#vozvratdiv.collapsing {
+    display: block!important;
+}
+#populardirection img {
+	display: none !important;
+	padding: 0px;
+}
+.directionlabel {
+    margin-left: 0;
+		margin-bottom: 0;
+		font-weight: normal;
+
+}
+.taxi,#checkboxlabel {
+    float: left !important;
+	}
+	#inputdate {
+    margin-left: auto !important;
+    }
+
+}
+#attention {
+	margin: -3px 5px 0px 0px;
+}
+#rule{
+	padding: 5px 0px 40px;
+}
+#vozvratcol{
+	float: left;
+	width: 960px;
+}
+#vozvratdiv{
+	background-color: rgb(248, 248, 248);
+	background-size: cover;
+	padding: 40px 0px 40px;
+}
+#kaspi{
+	padding: 40px 30px 0px 	0px;
+	float: right;
+}
+
+p{
+  color: rgb(93, 93, 93);
+  text-align: left;
+
+}
+.paymentimage{
+	height:auto;
+	width: auto;
+
+}
+.paymentcol{
+	vertical-align: middle;
+	align-content: center;
+}
+#paymenttype{
+	padding: 50px;
+
+}
+#paymenttitle{
+	margin-top: 0;
+	margin-bottom: 40px;
+	padding-left: 0;
+	text-align: center;
+	text-transform: uppercase;
+
+}
+
+#vibornapr{
+	width: 280px;
+	padding-left: 70px;
+	text-align: left;
+}
+#vibormest {
+	width: 110px;
+}
+#informpass{
+	width: 300px;
+}
+.header{
+	color: #ffffff;
+}
+
+.logobig{
+	float:left;
+	padding-top: 30px;
+	margin-left: 205px;
+}
+.possitiontop {
+    padding-top: 10px;
+}
+
+.containerallmobile{
+	 margin-right: auto;
+	 margin-top: auto;
+	 background-size: cover;
+	 z-index: -1;
+}
+
+.containerall{
+  background-image: url('../img/head.png') ;
+	 height: 475px;
+	 margin-right: auto;
+	 margin-top: auto;
+	/*max-width: 1200px;*/
+	 background-size: cover;
+	 z-index: -1;
+}
+
+.innercontainer {
+	margin-right: auto;
+    margin-left: auto;
+    width: auto;
+	max-width: 960px;
+}
+.leftstart{
+	/*padding-left: 160px;*/
+}
+.a{
+	color: rgb(255, 255, 255);
+	line-height: 2;
+  	text-align: center;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+#menubuttline{
+	margin-left: 20px;
+	min-height: 45px;
+}
+.navbar-default .navbar-nav  > li > a > div {
+	text-align: center;
+	/*font-family: Roboto;*/
+	font-size: 14px;
+}
+ .navbar-default {
+ 	z-index: 1000;
+ }
+.navbar-default .navbar-nav > li >  img{
+	float: left;
+	height: auto;
+	z-index: -1;
+}
+.searchitems{
+	border:solid  2px ;
+	border-radius: 4px;
+	border-color: #47767e;
+	height: 45px;
+	margin-bottom: 7px;
+}
+#stationsdiv{
+	width: 50%;
+}
+#inputdate{
+	margin-left: 20px;
+	width: 25%;
+}
+#inputdate .form-control {
+	background-color: transparent;
+	background: url('../img/calendar.png') no-repeat scroll 94% 50%;
+	cursor: pointer;
+    z-index: 1;
+}
+#popularlabel{
+  font-size: 20px;
+  color: rgb(105, 105, 105);
+	margin-bottom: 20px;
+
+}
+.stationmobile {
+    width:350px;
+}
+.stationbox, #inputdate .form-control {
+	height: 41px;
+	border:none;
+	border-radius: 0px;
+	float: left;
+	/*font-family: Roboto;*/
+	font-size: 20px;
+	color: #3B666B;
+}
+#checkboxlabel{
+	margin: 5px 0px ;
+	font-size: 10px;
+	line-height: 1;
+    float: right;;
+}
+input:checked ~ label,
+input.checked ~ label {
+	background: url('../img/check.png') no-repeat;
+	background-size: cover;
+	z-index: 1000;
+	}
+.taxi{
+	float: right;
+	margin-right: 10px;
+	/*font-family: Roboto;*/
+	font-size: 14px;
+	color: rgb(71, 118, 126);
+}
+
+.novisible{
+	visibility: hidden;
+}
+#taxidiv{
+	padding-right: 61px;
+}
+#fromstation{
+	width: 50%;
+	border:solid;
+	border-width: 0px 1px 0px 0px;
+	border-color:  #99b2b6;
+	background: url('../img/station.png') 	no-repeat scroll 94% 50%;
+}
+#tostation{
+	width: 50%;
+	background: url('../img/station.png') 	no-repeat scroll 95% 50%;
+}
+#searchrow {
+
+}
+#charity{
+	display: none;
+}
+#bottom{
+	background-color:  #47777e;
+	padding: 25px 0px 30px;
+	height: 130px;
+}
+#populardirection{
+	background-image: url('../img/direcpopback.png');
+	background-size: cover;
+	padding: 20px;
+}
+#searchcol {
+		padding: 15px 43%;
+	}
+.btn{
+		border-radius: 3px;
+		background-color: rgb(108, 201, 218);
+		font-size: 1.25em
+		/*font-family: Roboto;*/
+		line-height: 1.2;
+		text-align: center;
+		border:none;
+}
+
+.rules{
+	font-size:  16px;
+}
+
+
+.btn-info {
+  border-radius: 5px;
+  background-color: rgb(146, 195, 124);
+}
+
+
+
+.input-group-addon{
+	padding: 0px 0px;
+	text-align: center;
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	height: 100%;
+
+}
+input[type="checkbox"], input[type="radio"] {
+    margin: 0px 0px 0px;
+    width: 1px;
+    }
+.form-control::-webkit-input-placeholder {
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control:-ms-input-placeholder {
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+
+.leftstart > a  {
+    color:#ffffff;
+}
+
+#searchboxmobile > .row {
+    padding-top:20px;
+}
+
+
+
+#searchboxmobile{
+	background-color: #ffffff;
+	background-size: auto;
+	z-index: 10;
+}
+
+label {
+	margin-bottom: 0 !important;
+	font-weight: normal !important;
+}

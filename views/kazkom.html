@@ -1,0 +1,11 @@
+﻿<form name="SendOrder" id="SendOrder" method="post" data-bind="attr:{action: actionlink}">
+    <input type="hidden" name="Signed_Order_B64" data-bind="value: signtext">
+    <input type="hidden" name="email" size=50 maxlength=50 value="nurik_gosu@mail.ru">
+    <input type="hidden" name="Language" value="rus"> <!-- язык формы оплаты rus/eng -->
+    <input type="hidden" name="BackLink" data-bind="value: 'http//www.ibel.kz/Account/Details?orderId='+orderFKCId">
+    <input type="hidden" name="PostLink" data-bind="value: 'http://www.ibel.kz/Booking/BookResult?orderId='+orderFKCId">
+    <input type="hidden" name="FailurePostLink" data-bind="value: 'http://www.ibel.kz/Booking/BookResult/orderId='+orderFKCId">
+    <div id="kaspi-but" class="col-md-12 col-xs-12 ">
+        <a data-bind="click: $root.sendform"><img data-bind="attr:{src: imagePath}" /></a>
+    </div>
+</form>

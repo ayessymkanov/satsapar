@@ -1,0 +1,339 @@
+﻿<div>
+    <!-- ko if: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header-mobile.css" rel="stylesheet" />
+        <link href="css/train.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/global.css">
+
+        <div id="searchbox">
+            <div class="row">
+                <h1 class="from_to_staiton">
+                  <span data-bind="text: trains().PassRouteFrom" />
+                  <a data-bind="click:$root.changedirection.bind($root)">
+                    <img src="img/horizontal.png" />
+                  </a>
+                  <span data-bind="text: trains().PassRouteTo" />
+                </h1>
+            </div>
+            <div class="row">
+                <div class="week-div">
+                    <ul class="week-row" id="week-row" data-bind="with: $root.datescalendar">
+                        <li id="week-navigate">
+                            <a data-bind="click:$root.searchbydate.bind($data,'-8')">
+                                <img src="img/arrow-back.png" class="icon-arrow-back" />
+                            </a>
+                        </li>
+                        <li class="week-day " data-bind="css: {active:currentday() == 1},visible:day1.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'1')">
+                                <span class="date-month" data-bind="text: day1.day,css: {active:currentday() == 1}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 1} ">пн.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 2},visible:day2.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'2')">
+                                <span class="date-month" data-bind="text: day2.day,css: {active:currentday() == 2}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 2} ">вт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 3},visible:day3.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'3')">
+                                <span class="date-month" data-bind="text: day3.day,css: {active:currentday() == 3}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 3} ">ср.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 4},visible:day4.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'4')">
+                                <span class="date-month" data-bind="text: day4.day,css: {active:currentday() == 4}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 4} ">чт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 5},visible:day5.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'5')">
+                                <span class="date-month" data-bind="text: day5.day,css: {active:currentday() == 5}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 5} ">пт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 6},visible:day6.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'6')">
+                                <span class="date-month" data-bind="text: day6.day,css: {active:currentday() == 6}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 6} ">сб.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 7},visible:day7.visible ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'7')">
+                                <span class="date-month" data-bind="text: day7.day,css: {active:currentday() == 7}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 7} ">вс.</span>
+                            </a>
+                        </li>
+                        <li id="week-navigate" style="border-left-width:1px; ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'8')">
+                                <img src="img/arrowforward.png" class="icon-arrow-back" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" id="main-body">
+                <div id="trainscontainer" data-bind="with: trains, as:trainItems">
+                    <div data-bind="foreach: { data: Trains}">
+                        <div data-bind="foreach: {data: TrainsCollection, as: 'trainItem'}">
+                            <div class="train" data-bind="style: { display:visible}">
+                                <div class="train-fields row">
+
+                                    <div class="train-number-field field col-md-12 col-xs-12 col-sm-12">
+                                        <div class="col col-sm-12 col-xs-12 ta-center">
+                                          <h6 class="train-mobile-title">
+                                            <span class="train-key-details" style="display:inline" data-bind="text: trainItem.Number"></span>
+                                            <span data-bind="customData: Route, ind:0"></span> - <span data-bind="customData: trainItem.Route, ind:1"></span>
+                                          </h6>
+                                        </div>
+
+                                        <div class="col col-sm-12 col-xs-12 train-mob-data">
+                                          <div class="col col-sm-4 col-xs-4 ta-center">
+                                            <div class="train-mob-data__content">
+                                              <span class="ta-center dep-arr-time-mobile" data-bind="text:moment(DepartureDateTime).format('HH:mm')"></span>
+                                              <span class="ta-center" data-bind="text: moment(DepartureDateTime).format('LL').substring(0,moment(ArrivalDateTime).format('LL').length-7) "> </span>
+                                            </div>
+                                          </div>
+
+                                          <div class="col col-sm-4 col-xs-4 ta-center">
+                                            <span class="train-mob-data__label">Время в пути</span>
+                                            <div class="train-mob-data__content">
+                                              <span class="ta-center" data-bind="customTimeInPath: TimeInWay "></span>
+                                            </div>
+                                          </div>
+
+                                          <div class="col col-sm-4 col-xs-4 ta-center">
+                                            <div class="train-mob-data__content">
+                                              <span class="ta-center dep-arr-time-mobile" data-bind="text:moment(ArrivalDateTime).format('HH:mm')"> </span>
+                                              <span class="ta-center" data-bind="text: moment(ArrivalDateTime).format('LL').substring(0,moment(ArrivalDateTime).format('LL').length-7) "> </span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <!--<div id="train-departure-field" class="col-md-3 col-xs-3 col-sm-3">
+                                        <span class="train-regular-info " data-bind="text: moment(DepartureDateTime).format('LL').substring(0,moment(DepartureDateTime).format('LL').length-7)"></span>
+                                        <span class="train-regular-info" data-bind="text: moment(DepartureDateTime).format('dddd')"></span>
+                                    </div>-->
+                                    <!--<div id="train-arrival-field" class="col-md-2 col-xs-3 col-sm-3">
+
+                                        <span class="train-regular-info" data-bind="text: moment(ArrivalDateTime).format('LL').substring(0,moment(ArrivalDateTime).format('LL').length-7) "></span>
+                                        <span class="train-regular-info" data-bind="text: moment(ArrivalDateTime).format('dddd')"></span>
+                                    </div>-->
+                                </div>
+                                <div class="row row-places">
+                                    <div class="place-field row" data-bind="with:traindetails">
+                                        <div data-bind="foreach { data: Typewagons}">
+                                            <div class="col-md-3 col-xs-4 ta-center">
+                                                <a data-bind=" click:$root.clickdetail.bind(trainItem,type,$root.trains)">
+                                                    <div class="placesfreediv">
+                                                        <span class="placesfree"><span data-bind="text: typedisp"></span> <span data-bind="text: wagons " class="wagon-in-rect"></span></span>
+                                                        <span data-bind="placeInfo:$parents[1].Cars, type:type,infotype:0"></span>&nbspтг
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ko with:traindetails -->
+                                <div class="trainselected" data-bind=" compose : {model :modelpath, view : viewpath,activationData: trainInfo}">
+                                </div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko ifnot: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="css/train.css" rel="stylesheet" />
+        <div id="searchbox">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                        <img src="img/passedselectedmenus.png" />
+                                    </li>
+
+                                    <li class="active">
+                                        <a href="#"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                        <img src="img/selectedmenubutton.png" />
+                                    <li><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="img/vibornaprsplitter.png" /></li>
+                                    <li><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row traindirection" style="display:inline-block">
+                <div class="text-center">
+                    <h1 class="from_to_staiton"><span data-bind="text: trains().PassRouteFrom" /><a data-bind="click:$root.changedirection.bind($root)"> <img src="img/horizontal.png" /> </a><span data-bind="text: trains().PassRouteTo" /></h1>
+                    <a id=" tagizmenitnapr" data-bind="click:$root.changedirection.bind($root)">
+                        <u>Изменить направление</u>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="week-div">
+                    <ul class="week-row" data-bind="with: $root.datescalendar">
+                        <li id="week-navigate">
+                            <a data-bind="click:$root.searchbydate.bind($data,'-8')">
+                                <img src="img/arrow-back.png" class="icon-arrow-back">
+                                </img>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 1} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'1')">
+                                <span class="date-month" data-bind="text: day1.day,css: {active:currentday() == 1}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 1} ">пн.</span>
+                            </a>
+                        </li>
+                        <li class="week-day " data-bind="css: {active:currentday() == 2} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'2')">
+                                <span class="date-month" data-bind="text: day2.day,css: {active:currentday() == 2}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 2} ">вт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 3} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'3')">
+                                <span class="date-month" data-bind="text: day3.day,css: {active:currentday() == 3}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 3} ">ср.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 4} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'4')">
+                                <span class="date-month" data-bind="text: day4.day,css: {active:currentday() == 4}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 4} ">чт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 5} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'5')">
+                                <span class="date-month" data-bind="text: day5.day,css: {active:currentday() == 5}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 5} ">пт.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 6} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'6')">
+                                <span class="date-month" data-bind="text: day6.day,css: {active:currentday() == 6}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 6} ">сб.</span>
+                            </a>
+                        </li>
+                        <li class="week-day" data-bind="css: {active:currentday() == 7} ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'7')">
+                                <span class="date-month" data-bind="text: day7.day,css: {active:currentday() == 7}"></span>
+                                <span class="day-week" data-bind="css: {active:currentday() == 7} ">вс.</span>
+                            </a>
+                        </li>
+                        <li id="week-navigate" style="border-left-width:1px; ">
+                            <a data-bind="click:$root.searchbydate.bind($data,'8')">
+                                <img src="img/arrowforward.png" class="icon-arrow-back">
+                                </img>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row main-filter row-centered">
+                <!--<span class="filter-text" style="font-size: 16px;color: rgb(50, 50, 50); margin: 0px;">Фильтр</span>-->
+
+                <div>
+                    <div class="departure-filter">
+                        <span class="filter-text">Время отправления</span>
+                        <div style="display:inline-block">
+                            <a id="night1" data-bind="click:$root.filtertrains.bind($data,1,$root.inputboxs.checkbox1)"><img id="night-filter" data-bind="attr:{src:$root.inputboxs.checkbox1().src}" /></a>
+                            <a id="night2" data-bind="click:$root.filtertrains.bind($data,2,$root.inputboxs.checkbox2)"><img id="morning-filter" data-bind="attr:{src:$root.inputboxs.checkbox2().src}" /></a>
+                            <a data-bind="click:$root.filtertrains.bind($data,3,$root.inputboxs.checkbox3)"><img id="day-filter" data-bind="attr:{src:$root.inputboxs.checkbox3().src}" /></a>
+                            <a data-bind="click:$root.filtertrains.bind($data,4,$root.inputboxs.checkbox4)"><img id="evenning-filter" data-bind="attr:{src:$root.inputboxs.checkbox4().src}" /></a>
+                        </div>
+                    </div>
+                    <div class="arrival-filter">
+                        <span class="filter-text">Время прибытия</span>
+                        <div style="display:inline-block">
+                            <a id="night1" data-bind="click:$root.filtertrains.bind($data,5,$root.inputboxs.checkbox5)"><img id="night-filter" data-bind="attr:{src:$root.inputboxs.checkbox5().src}" /></a>
+                            <a id="night2" data-bind="click:$root.filtertrains.bind($data,6,$root.inputboxs.checkbox6)"><img id="morning-filter" data-bind="attr:{src:$root.inputboxs.checkbox6().src}" /></a>
+                            <a data-bind="click:$root.filtertrains.bind($data,7,$root.inputboxs.checkbox7)"><img id="day-filter" data-bind="attr:{src:$root.inputboxs.checkbox7().src}" /></a>
+                            <a data-bind="click:$root.filtertrains.bind($data,8,$root.inputboxs.checkbox8)"><img id="evenning-filter" data-bind="attr:{src:$root.inputboxs.checkbox8().src}" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="main-body">
+                <div id="trainscontainer" data-bind="with: trains, as:trainItems">
+                    <div data-bind="foreach: { data: Trains}">
+                        <div data-bind="foreach: {data: TrainsCollection, as: 'trainItem'}">
+                            <div class="train" data-bind="style: { display:visible}">
+                                <div class="train-fields row">
+                                    <div id="train-number-field" class="field col-md-2 col-xs-3 col-sm-3">
+                                        <span class="train-key-details" data-bind="text: trainItem.Number"></span>
+                                        <span class="train-regular-info" data-bind="customData: Route, ind:0"></span>
+                                        <span class="train-regular-info" data-bind="customData: trainItem.Route, ind:1"></span>
+                                    </div>
+                                    <div id="train-departure-field" class="col-md-3 col-xs-3 col-sm-3">
+                                        <span class="train-key-details " data-bind="text:moment(DepartureDateTime).format('HH:mm')"></span>
+                                        <span class="train-regular-info " data-bind="text: moment(DepartureDateTime).format('LL').substring(0,moment(DepartureDateTime).format('LL').length-7)"></span>
+                                        <span class="train-regular-info" data-bind="text: moment(DepartureDateTime).format('dddd')"></span>
+                                        <span>
+                                        </span>
+                                    </div>
+                                    <div id="trip-time-field" class="col-md-3 col-xs-3 col-sm-3">
+                                      <span class="ta-center" style="display: block;margin-bottom: 10px;">Время в пути</span>
+                                        <span class="train-key-details">
+                                            <span data-bind="customTimeInPath: TimeInWay "></span>
+                                        </span>
+                                    </div>
+                                    <div id="train-arrival-field" class="col-md-2 col-xs-3 col-sm-3">
+                                        <span class="train-key-details" data-bind="text:moment(ArrivalDateTime).format('HH:mm')"> </span>
+                                        <span class="train-regular-info" data-bind="text: moment(ArrivalDateTime).format('LL').substring(0,moment(ArrivalDateTime).format('LL').length-7) "></span>
+                                        <span class="train-regular-info" data-bind="text: moment(ArrivalDateTime).format('dddd')"></span>
+                                    </div>
+                                </div>
+                                <div class="row row-places">
+                                    <div class="place-field row ta-center" data-bind="with:traindetails">
+                                        <div class="wagons-container" data-bind="foreach { data: Typewagons}">
+                                            <div class="col-md-3 col-xs-3 wagon-btn">
+                                                <a class="btn-wagon" data-bind="click:$root.clickdetail.bind(trainItem,type,$root.trains)">
+                                                    <div class="placesfreediv">
+                                                        <span class="placesfree"><span data-bind="text: type"></span>
+                                                        <span class="wagon-in-rect" data-bind="text: wagons "></span></span>
+                                                        <span class="ticket-price" data-bind="placeInfo:$parents[1].Cars, type:type,infotype:0"></span>
+                                                    </div>
+
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ko with:traindetails -->
+                                <div class="trainselected" data-bind=" compose : {model :modelpath, view : viewpath,activationData: trainInfo}">
+                                </div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

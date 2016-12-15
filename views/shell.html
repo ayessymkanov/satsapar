@@ -1,0 +1,146 @@
+﻿<div>
+    <!-- ko if: isMobileDevice()==true -->
+    <div><link href="../css/global-mobile.css" rel="stylesheet" /></div>
+
+    <div class="containerallmobile">
+        <div class="innercontainer">
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="navbar-header navbar-mobile row-centered">
+                  <span class="navbar-home" >SATSAPAR</span>
+                  <button type="button" class="navbar-toggle navbar-button collapsed" data-toggle="collapse" data-target="#headerlinks" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+
+              </div>
+              <div id="headerlinks" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a class="a" href="#">Главная</a></li>
+                      <li><a class="a" href="#BookingDiv">Проверить бронь</a></li>
+                      <!--<li><a href="" class="a">Корпоративный клиент</a></li>-->
+                  </ul>
+              </div>
+          </nav>
+
+        </div>
+        <div id="BookingDiv" class="modalDialog">
+            <div class="mymodal">
+                <a href="#close" title="Close" class="modal__close"></a>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 ta-center">
+                        <label class="modal__label" for="bookingCode">
+                            Введите номер бронирования
+                        </label>
+                        <input id="bookingCode" class="input-sm modal__input" name="bookingCode" data-bind="value: $root.searchinput" placeholder="Например: 12345ab">
+                    </div>
+                </div>
+                <div class="row" align="center">
+                  <input value="Поиск" class="pure-button-2 modal__submit" type="submit" data-bind="click: requestbookinginfo">
+                </div>
+            </div>
+        </div>
+        <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
+            <i class="icon-spinner icon-2x icon-spin"></i>
+        </div>
+        <div class="page-host" data-bind="router: { transition:'entrance' }">
+
+        </div>
+        <div id="bottom">
+            <div class="innercontainer">
+                <div class="row">
+                    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <span>По всем вопросам</span>
+                        <span>+ 7 707 540 02 00 </span>
+                        <span>+ 7 701 809 02 00</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko ifnot: isMobileDevice()==true -->
+    <div><link href="../css/global.css" rel="stylesheet" /></div>
+    <div class="containerall">
+        <div class="innercontainer">
+            <div class="header">
+                <div class="row">
+                    <div class="pull-left" >
+                        <!--<img src="../../img/Satsapar_logo_black.png" style="height:90px;width:300px"/>
+                        <img src="../../img/Satsapar_logo_darkbg.png" style="height:90px;width:300px"/>-->
+                        <img src="../../img/Satsapar_logo_main.png" style="height: 115px;width:300px;padding-top: 30px;"/>
+                    </div>
+                    <div class="phone pull-right">
+                        <img src="../img/Phone.png" class="sequence possitiontop" />
+                        <div class="sequence positionleft">
+                            + 7 707 540 02 00 <br>+ 7 701 809 02 00
+                        </div>
+                    </div>
+                    <!--<div class="logobig">
+                        <img src="../img/logobig.png" />
+                    </div>-->
+                </div>
+                <div class="row headrow2">
+                    <div class="col-xs-6 col-md-5 leftstart">
+                        <a href="/">
+                            <img src="../img/logo.png" class="sequence" />
+                            <span class="sequence positionleft possitiontop">Онлайн бронирование билетов</span>
+                        </a>
+                    </div>
+                    <div class="order-search" class="col-xs-6 col-md-4">
+                        <!-- <a class="a" href="#BookingDiv">Проверить бронь</a> -->
+                        <!--<img src="../img/menubuttonline.png" id="menubuttline" />-->
+                        <!--<a href="" class="a">Корпаративный клиент</a>-->
+                        <input id="bookingCode" name="bookingCode" data-bind="value: $root.searchinput" placeholder="Номер заказа">
+                        <input value="Поиск" class="pure-button-2" type="submit" data-bind="click: requestbookinginfo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="BookingDiv" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <div>
+                    <table style="margin:30px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Номер бронирования
+                                    </label>
+                                </td>
+                                <td>
+                                    <input id="bookingCode" name="bookingCode" data-bind="value: $root.searchinput"><br>
+                                </td>
+                                <td> </td>
+                                <td align="center"><input value="Поиск" class="pure-button-2" style="margin-left:5px" type="submit" data-bind="click: requestbookinginfo">  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div> -->
+        <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
+            <i class="icon-spinner icon-2x icon-spin"></i>
+        </div>
+        <div class="page-host" data-bind="router: { transition:'entrance' }">
+
+        </div>
+        <div id="bottom">
+            <div class="innercontainer">
+                <!--<img src="../img/bottomlogo.png" style="float:left;" />-->
+                <div class="pull-right" style="color:#ffffff;font-size:20px;">
+                    <img src="../img/Phone.png" class="sequence possitiontop" />
+                    <div class="sequence positionleft">
+                        + 7 707 540 02 00 <br>+ 7 701 809 02 00
+                    </div>
+                </div>
+                <!--<img src="../img/bottomtele.png" style="float:right; margin:10px 0px 0px;" />-->
+            </div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

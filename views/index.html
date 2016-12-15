@@ -1,0 +1,260 @@
+﻿﻿<div>
+    <!-- ko if: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header-mobile.css" rel="stylesheet" />
+        <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="../css/jquery-ui.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/global.css">
+        <div id="searchboxmobile">
+          <div class="search-form-wrapper">
+            <div class="search-form">
+              <div class="row">
+                <div class="col col-sm-12 col-xs-12">
+                  <label class="control-label search-form-instruction">Начните вводить название станции, затем выберите станцию из предложенного списка</label>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col col-sm-12 col-xs-12">
+                      <input class="form-control " id="fromstation" style="padding: 10px 15px;
+                      margin-bottom: 20px;"
+                             data-bind="ko_autocomplete: { source: getLocations, select: selectLocation }" type="text" placeholder="Откуда">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col col-sm-12 col-xs-12">
+                      <input class="form-control " style="padding: 10px 15px;margin-bottom: 20px;" id="tostation" style="width:100%;background-color:#ffffff;" type="text" placeholder="Куда" data-bind="ko_autocomplete: { source: getLocations, select: selectLocation2 }">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col col-sm-12 col-xs-12">
+                      <div class="" id="inputdate" style="width:100%;">
+                          <div class="input-group date " id="datetimepicker3">
+                              <div class="input-group-addon">
+                                  <input type="text" class="form-control" style="padding: 10px 15px;margin-bottom: 20px;" id="searchDate" placeholder="Когда">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row" >
+                  <div class="col col-sm-12 col-xs-12 col-md-12" >
+                      <button class="btn btn-primary btn--large btn--large__mbl" id="searchButton" data-bind="click: $root.searchButtonClick">
+                          <span class="search-btn-label">Найти Билеты <span />
+                      </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+            <div id="info-box">
+              <div class="popular-routes">
+                <div class="row">
+                    <h6 class="popular-routes__title">Популярные маршруты</h6>
+                    <div class="row" >
+                      <button class="btn btn-info popular-routes__btn" data-bind="click: $root.populateDirection.bind($root,0)"><span data-bind="text: getDirectionNames(0)"></span></button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-info popular-routes__btn" data-bind="click: $root.populateDirection.bind($root,1)"><span data-bind="text: getDirectionNames(1)"></span></button>
+                    </div>
+                </div>
+              </div>
+              <div class="rules-mobile">
+                <div class="row ta-center">
+                    <button class="btn rules-mobile-btn visible-xs" data-toggle="collapse" data-target="#rule">ПРАВИЛА ПОКУПКИ </button>
+                    <button class="btn rules-mobile-btn visible-xs" data-toggle="collapse" data-target="#vozvratdiv">ПРАВИЛА ВОЗВРАТА </button>
+                    <div id="rule" class="hidden-xs">
+                        <h3><a href="#"> ПРАВИЛА ПОКУПКИ ЭЛЕКТРОННЫХ ПРОЕЗДНЫХ ДОКУМЕНТОВ (БИЛЕТОВ)</a></h3>
+                        <p class="rules">
+                            Наш сайт предлагает услугу по оформлению и оплате электронных Железнодорожных проездных документов (билетов) (далее - электронные жд билеты) с комиссии для физического лица с использованием его банковской карты.
+                            Совершая покупку электронных проездных документов (билетов) на нашем сайте, Вы соглашаетесь со всеми ниже перечисленными условиями.
+                            <br />Вы, как пользователь сайта, подтверждаете свое право и дееспособность, финансовую состоятельность, а также сознаете ответственность за обязательства, возложенные на Вас в результате заключения настоящей оферты.<br />
+                            В случае если пользователь не принимает условия настоящей оферты, он не допускается к оформлению и оплате электронных проездных документов (билетов).<br />
+                            Настоящая оферта содержит все существенные условия продажи и возврата электронных проездных документов (билетов), осуществления посадки и проезда в поезде.
+                        </p>
+                        <h4><a href="#"> СУММЫ ПОДЛЕЖАЩЕЕ ВОЗВРАТУ ЗА НЕИСПОЛЬЗОВАННЫЙ ПРОЕЗДНОЙ ДОКУМЕНТ </a></h4>
+                        <p class="rules">
+                        </p> Внимание!!! При возврате электронного билета в зависимости от тарифной политики перевозчика может взиматься комиссионный сбор за возврат билета.
+                        </p>При возврате неиспользованного электронного проездного документа (билета), к зачислению на банковскую карту причитается:
+                        <br />• не позднее чем за 24 часа до отправления поезда - стоимость проезда, состоящая из стоимости билета и стоимости плацкарты;
+                        <br />• менее чем за 24 часа, но не позднее, чем за 6 часов до отправления поезда - стоимость билета и 50% стоимости плацкарты;
+                        <br />• менее чем за 6 часов до отправления поезда, но не позднее 3 часов после отправления поезда со станции посадки пассажира - стоимость билета. Стоимость плацкарты не возвращается.
+                        </p>При возврате неиспользованных проездных документов (билетов), оформленных на поезда, сформированные исключительно из вагонов с местами для сидения:
+                        <br />• не позднее, чем за 24 часа до отправления поезда, получить полную стоимость проезда;
+                        <br />• менее чем за 24 часа, но не позднее, чем за 6 часов до отправления поезда - получить 50% от стоимости проезда;
+                        <br />• менее чем за 6 часов до отправления и после отправления поезда стоимость проезда не возвращается.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <button class="btn btn-info visible-xs " data-toggle="collapse" data-target="#vozvratdiv">ПРАВИЛА ВОЗВРАТА </button> -->
+                    <div id="vozvratdiv" class="row hidden-xs">
+                        <div class="innercontainer">
+                            <h3>
+                                ПОСЛЕ ОПЛАТЫ ЭЛЕКТРОННОГО БИЛЕТА ФОРМИРУЕТСЯ ЭЛЕКТРОННЫЙ ПРОЕЗДНОЙ ДОКУМЕНТ (БИЛЕТ)
+                            </h3>
+                            <div>
+                                <div id="vozvratcol">
+                                    <h4><a href="#">ВОЗВРАТ ЭЛЕКТРОННОГО ПРОЕЗДНОГО ДОКУМЕНТА (БИЛЕТА) ПРОИЗВОДИТСЯ:</a></h4>
+                                    <p class="rules">
+                                        <br />- Возврат электронного проездного документа (билета) онлайн, возможен не позднее чем за 1 час до отправления поезда с НАЧАЛЬНОЙ станции отправления (т.е.станции отправления поезда) согласно расписания следования поезда. Данное правило не распространяется на пригородные поезда (электрички).
+                                        <br />- В случаях если возврат на сайте уже невозможен так как до отправления поезда с начальной станции (т.е. станции отправления поезда, а не пассажира!!!) осталось менее 1 часа, пассажир для возврата неиспользованного электронного проездного документа (билета) должен ЛИЧНО обратиться в билетную кассу на территории Республики Казахстан и предъявить:
+                                        <br />1. Электронный проездной документ (билет);
+                                        <br />2. Документ удостоверяющий личность, указанный в электронном билете. При обращении в билетную кассу пассажир производит возврат места в поезде и получает в билетной кассе квитанцию разных сборов (далее -КРС), подтверждающую факт и время возврата места в поезде.
+                                        <br />- Для возврата причитающихся денежных средств полученный КРС (квитанция разных сборов)  необходимо представить в сканированном виде на электронную почту <a href="#">wwwitsbkz@gmail.com.</a>
+                                        <br />- билеты Вы можете оплачивать на сайте kaspi.kz. <br>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- /ko -->
+    <!-- ko ifnot: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="../css/jquery-ui.css" rel="stylesheet" />
+        <div id="searchbox">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="active">
+                                        <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                        <img src="../img/selectedmenubutton.png" />
+                                    </li>
+                                    <li>
+                                        <a href="#"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                        <img src="../img/vibornaprsplitter.png" />
+                                    </li>
+                                    <li><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="../img/vibornaprsplitter.png" /></li>
+                                    <li><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row my-row">
+                <div class="form-group col-xs-10 col-md-8 searchitems" id="stationsdiv">
+                    <input class="form-control stationbox" id="fromstation" data-bind="ko_autocomplete: { source: getLocations, select: selectLocation }" type="text" placeholder="Откуда">
+                    <input class="form-control stationbox" id="tostation" type="text" placeholder="Куда" data-bind="ko_autocomplete: { source: getLocations, select: selectLocation2 }">
+                </div>
+                <div class="form-group col-xs-2 col-md-4 searchitems" id="inputdate">
+                    <div class="input-group date " id="datetimepicker3">
+                        <div class="input-group-addon">
+                            <input type="text" class="form-control" id="searchDate" placeholder="Когда">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary pull btn--large" id="searchButton" data-bind="click: $root.searchButtonClick" >
+                    Найти
+                </button>
+            </div>
+            <div class="row">
+                <!--<div class="col-xs-12 col-md-12" id="taxidiv">
+                    <span class="taxi">Предварительный заказ такси</span>
+                    <input type="checkbox" class="taxi novisible" id="istaxi" />
+                    <label for="istaxi" id="checkboxlabel"><img src="../img/checkboxframe.png" id="istaxi"> </label>
+                </div>-->
+            </div>
+            <!-- <div class="row" id="searchrow">
+                <div class="col-xs-12 col-md-12" id="searchcol">
+                    <button class="btn btn-primary pull btn--large" id="searchButton" data-bind="click: $root.searchButtonClick" >
+                        Найти
+                    </button>
+                </div>
+            </div> -->
+
+            <div class="row" id="populardirection">
+                <p id="popularlabel">Популярные маршруты:</p>
+                <div class="col-xs-3 col-md-3 col-padding">
+                    <button class="btn btn-info btn--100" data-bind="click: $root.populateDirection.bind($root,0)"><label class="directionlabel" data-bind="text: getDirectionNames(0)"></label></button>
+                </div>
+                <div class="col-xs-3 col-md-3 col-padding">
+                    <button class="btn btn-info btn--100" data-bind="click: $root.populateDirection.bind($root,1)"><label class="directionlabel" data-bind="text: getDirectionNames(1)">Астана - Алмата</label></button>
+                </div>
+                <div class="col-xs-3 col-md-3 col-padding">
+                    <button class="btn btn-info btn--100" data-bind="click: $root.populateDirection.bind($root,2)"><label class="directionlabel" data-bind="text: getDirectionNames(2)">Астана - Жамбыл</label></button>
+                </div>
+                <div class="col-xs-3 col-md-3 col-padding">
+                    <button class="btn btn-info btn--100" data-bind="click: $root.populateDirection.bind($root,3)"><label class="directionlabel" data-bind="text: getDirectionNames(3)">Алмата - Астана</label></button>
+                </div>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+        <button class="btn btn-info visible-xs" data-toggle="collapse" data-target="#rule">ПРАВИЛА ПОКУПКИ </button>
+        <div id="rule" class="hidden-xs">
+            <h3><a href="#"> ПРАВИЛА ПОКУПКИ ЭЛЕКТРОННЫХ ПРОЕЗДНЫХ ДОКУМЕНТОВ (БИЛЕТОВ)</a></h3> <p class="rules">
+                Наш сайт предлагает услугу по оформлению и оплате электронных Железнодорожных проездных документов (билетов) (далее - электронные жд билеты) с комиссии для физического лица с использованием его банковской карты.
+                Совершая покупку электронных проездных документов (билетов) на нашем сайте, Вы соглашаетесь со всеми ниже перечисленными условиями.
+                <br />Вы, как пользователь сайта, подтверждаете свое право и дееспособность, финансовую состоятельность, а также сознаете ответственность за обязательства, возложенные на Вас в результате заключения настоящей оферты.<br />
+                В случае если пользователь не принимает условия настоящей оферты, он не допускается к оформлению и оплате электронных проездных документов (билетов).<br />
+                Настоящая оферта содержит все существенные условия продажи и возврата электронных проездных документов (билетов), осуществления посадки и проезда в поезде.
+            </p>
+            <h3><a href="#"> СУММЫ ПОДЛЕЖАЩЕЕ ВОЗВРАТУ ЗА НЕИСПОЛЬЗОВАННЫЙ ПРОЕЗДНОЙ ДОКУМЕНТ </a></h3>
+            <p class="rules">
+                                                                                                                                                   <br />
+    Внимание!!! При возврате электронного билета в зависимости от тарифной политики перевозчика может взиматься комиссионный сбор за возврат билета.
+            <br />
+            <br />
+            При возврате неиспользованного электронного проездного документа (билета), к зачислению на банковскую карту причитается:
+            <br />• не позднее чем за 24 часа до отправления поезда - стоимость проезда, состоящая из стоимости билета и стоимости плацкарты;
+            <br />• менее чем за 24 часа, но не позднее, чем за 6 часов до отправления поезда - стоимость билета и 50% стоимости плацкарты;
+            <br />• менее чем за 6 часов до отправления поезда, но не позднее 3 часов после отправления поезда со станции посадки пассажира - стоимость билета. Стоимость плацкарты не возвращается.
+            <br /><br /> При возврате неиспользованных проездных документов (билетов), оформленных на поезда, сформированные исключительно из вагонов с местами для сидения:
+            <br />• не позднее, чем за 24 часа до отправления поезда, получить полную стоимость проезда;
+            <br />• менее чем за 24 часа, но не позднее, чем за 6 часов до отправления поезда - получить 50% от стоимости проезда;
+            <br />• менее чем за 6 часов до отправления и после отправления поезда стоимость проезда не возвращается.</p>
+            </p>
+        </div>
+    </div>
+    <button class="btn btn-info visible-xs " data-toggle="collapse" data-target="#vozvratdiv">ПРАВИЛА ВОЗВРАТА </button>
+    <div id="vozvratdiv" class="row hidden-xs">
+        <div class="innercontainer">
+            <h3>
+                ПОСЛЕ ОПЛАТЫ ЭЛЕКТРОННОГО БИЛЕТА ФОРМИРУЕТСЯ ЭЛЕКТРОННЫЙ ПРОЕЗДНОЙ ДОКУМЕНТ (БИЛЕТ)
+            </h3>
+            <div>
+                <div id="vozvratcol">
+                    <p class="rules"><a href="#">ВОЗВРАТ ЭЛЕКТРОННОГО ПРОЕЗДНОГО ДОКУМЕНТА (БИЛЕТА) ПРОИЗВОДИТСЯ:</a></p>
+                    <p class="rules vozvrat">
+                        <br />- Возврат электронного проездного документа (билета) онлайн, возможен не позднее чем за 1 час до отправления поезда с НАЧАЛЬНОЙ станции отправления (т.е.станции отправления поезда) согласно расписания следования поезда. Данное правило не распространяется на пригородные поезда (электрички).
+                        <br />- В случаях если возврат на сайте уже невозможен так как до отправления поезда с начальной станции (т.е. станции отправления поезда, а не пассажира!!!) осталось менее 1 часа, пассажир для возврата неиспользованного электронного проездного документа (билета) должен ЛИЧНО обратиться в билетную кассу на территории Республики Казахстан и предъявить:
+                        <br />1. Электронный проездной документ (билет);
+                        <br />2. Документ удостоверяющий личность, указанный в электронном билете. При обращении в билетную кассу пассажир производит возврат места в поезде и получает в билетной кассе квитанцию разных сборов (далее -КРС), подтверждающую факт и время возврата места в поезде.
+                        <br />- Для возврата причитающихся денежных средств полученный КРС (квитанция разных сборов)  необходимо представить в сканированном виде на электронную почту <a href="#">wwwitsbkz@gmail.com.</a>
+                        <br />- билеты Вы можете оплачивать на сайте kaspi.kz. <br>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="innercontainer" id="paymenttype">
+        <h3 id="paymenttitle">satsapar.kz предлагает различные способы оплаты</h3>
+        <div class="row">
+            <div class="col-xs-3 col-md-3 paymentcol"><img src="img/viza.png" class="paymentimage" /></div>
+            <div class="col-xs-3 col-md-3"><img src="img/mastercard.png" /></div>
+            <div class="col-xs-3 col-md-3"><img src="img/maestro.png" /></div>
+            <div class="col-xs-3 col-md-3"><img src="img/kaspimini.png" /></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

@@ -1,0 +1,1042 @@
+@media  screen and (max-width: 800px) {
+	.wagon-picture > span {
+		margin: 5px 0px 0px;
+		font-size: 7px;
+	}
+	.wagon-picture .bottom-place{
+		margin: -5px 0px 0px;
+	}
+     .week-row li {
+        width:54px !important;
+    }
+     .order-generate-div {
+         padding:10px !important;
+     }
+     #trainscontainer{
+         padding: 0px !important;
+     }
+     .place-field{
+     }
+     .train-number-field{
+         border-width:0 !important;
+     }
+     .train-key-details{
+         padding:0 !important;
+         text-align:left !important;
+     }
+    .train-number-field div {
+        position: relative;
+        display: block;
+    }
+
+    .from-station-box {
+        padding-bottom: 35px;
+    }
+    .field div {
+        display:block !important;
+    }
+    .train-number-field .train-regular-info {
+        text-align:left;
+        margin-left:5px;
+        display:inline-block;
+    }
+    #trip-time-field{
+        padding:0px !important;
+    }
+}
+.station-mobile{
+    white-space:pre-wrap;
+}
+#main-body {
+
+}
+.filter-text{
+	display: block;
+	color: rgb(101, 101, 101);
+	line-height: 1;
+	font-size: 18px;
+	float: none;
+	margin: 0px 0px 7px;
+
+}
+.filter-time{
+	position: relative;
+	left: 25px;
+}
+#trainscontainer{
+	position: relative;
+	margin-top: 40px;
+}
+
+#trip-time-field{
+    display:inline;
+}
+
+
+
+.field{
+	 /*border-color: rgb(228, 228, 228);
+	 border-style: solid;
+	 border-width: 1px;*/
+	 margin: 0px 0px 1px;
+     display:inline-block;
+}
+.btn-place-selection{
+	  float: right;
+	  border-radius: 2px;
+	  background-color: rgb(75, 121, 127);
+	  color: rgb(255, 255, 255);
+	  font-size: 14px;
+	  line-height: 1;
+	  padding: 5px 10px 1px;
+	  border-style: none;
+	  position: relative;
+	  right: 20%;
+}
+.placesfree{
+  display: block;
+  padding: 6px 0px 0px;
+  font-size: 14px;
+
+}
+.train-regular-info{
+
+}
+.train-key-details,
+.train-regular-info{
+  text-align: center;
+  display: block;
+
+  color: rgb(65, 65, 65);
+}
+.train-key-details{
+
+  font-weight: bold;
+}
+.traindirection{
+	width: 100%;
+	padding: 50px;
+}
+#filter input[type="checkbox"]{
+	margin: 0px 10px 0px 0px;
+	width: auto;
+	position: relative;
+	top:3px;
+
+}
+
+
+.from_to_staiton {
+  font-size: 32px;
+  color: rgb(84, 156, 160);
+  line-height: 0.75;
+	text-align: center;;
+}
+
+@media(max-width: 767px) {
+	.from_to_staiton {
+		overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 24px;
+	}
+}
+
+.week-div  {
+	height: 100%;
+	margin-bottom: 20px;
+}
+.week-row {
+		list-style: outside none none;
+		padding: 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		background-color: white;
+		margin-bottom: 0;
+}
+.week-row li{
+	box-sizing: border-box;
+	padding: 10px;
+	flex-grow: 1;
+	display: flex;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+@media(max-width: 767px) {
+	.week-row li {
+		padding: 5px;
+		font-size: 12px;
+	}
+}
+
+.week-row li:hover {
+	background-color: rgb(122, 213, 217);
+}
+
+.week-row li:hover > a {
+	color: white;
+}
+
+.icon-arrow-back {
+	position: relative;
+	width: 10px;
+	height: 17px;
+	display:block;
+    margin:auto;
+}
+.week-row a {
+	position: relative;
+	display:block;
+ 	text-align: center;
+ 	width: 100%;
+}
+
+.week-row a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+#week-navigate{
+	width: 45px;
+	border-color: #e4e4e4;
+	border-style: solid;
+	border-width: 1px;
+}
+
+#week-navigate a > img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.week-day {
+	border-color: #e4e4e4;
+	border-style: solid;
+	border-width: 1px;
+}
+.date-month {
+  display: block;
+  color: rgb(66, 66, 66);
+}
+.day-week {
+  display: block;
+  color: rgb(66, 66, 66);
+}
+
+@media(max-width: 767px) {
+	.date-month,
+	.day-week {
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
+
+.wagonprice{
+  display: table-cell;
+  font-size: 14px;
+  color: rgb(46, 47, 103);
+  padding: 15px 10px 0px ;
+}
+.trainselected{
+	background-color: rgb(235, 242, 255);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+	position: relative;
+	left: 1px;
+}
+.wagonsinfo{
+	text-align: center;
+}
+.wagonsinfo,
+.place-desc-div,
+.hint-div{
+	border-color: rgb(196, 196, 196);
+	border-style: solid;
+	border-width: 0px 0px 1px;
+}
+
+.place-desc-div {
+	padding: 20px 10px;
+}
+
+.wagonsinfo >div {
+	border-color: rgba(196, 196, 196, 0.4);
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+}
+
+.wagontype {
+	display: inline-block;
+	margin-right: 20px;
+	margin-top: 20px;
+	font-size: 22px;
+}
+
+@media(max-width: 767px) {
+	.wagontype {
+		margin-top: 0;
+		font-size: 18px;
+	}
+
+	.kztprice,
+	.free-total-places {
+		font-size: 16px;
+	}
+
+	.place-description {
+		display: block;
+		text-align: center;
+		margin-bottom: 5px;
+	}
+
+}
+
+.free-total-places {
+	display: block;
+	font-size: 18px;
+}
+
+.order-generate{
+	padding: 10px 44px;
+	width: auto;
+}
+.order-generate-div{
+	padding: 10px;
+	text-align: center;
+}
+.kztprice{
+	display: inline-block;
+	font-size: 18px;
+}
+
+.wagonselection{
+	width: 100%;
+	font-size: 12px;
+	color: rgb(40, 40, 40);
+	text-align: center;
+}
+
+label{
+	font-weight: inherit;
+
+}
+input[type=radio] {
+    cursor: pointer;
+}
+
+#radios {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+	padding: 20px;
+}
+#radios label {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+@media(max-width: 767px) {
+	#radios {
+		padding: 10px;
+	}
+
+	#radios label {
+		font-size: 13px;
+		margin-bottom: 0;
+	}
+
+	#radios > div {
+		margin: 5px;
+	}
+}
+
+#radios > div {
+	width: 150px;
+	border: 1px solid;
+	margin: 10px;
+}
+
+#radios > div:hover {
+	color: white;
+  background-color: rgb(75, 121, 127);
+}
+
+input.a {
+	display: none;
+}
+
+input.a + label {
+	display: block;
+	padding: 10px;
+}
+
+input.a:checked + label {
+	background-color: rgb(75, 121, 127);
+	color: white;
+}
+
+.bracket-hint {
+
+}
+.wagonselection >div {
+
+}
+
+.wagon-picture {
+  background-color: rgb(206, 213, 226);
+  padding: 20px 0;
+  position: relative;
+	overflow: auto;
+}
+.place-1{
+	position: absolute;
+	top:42.5%;
+	left: 17.5%;
+}
+.place-2{
+	position: absolute;
+	top:22.5%;
+	left: 17.5%;
+}
+.place-3{
+	position: absolute;
+	top:42.5%;
+	left: 22.7%;
+}
+.place-4{
+	position: absolute;
+	top:22.5%;
+	left: 22.7%;
+}
+.place-5{
+ position: absolute;
+ top:42.5%;
+ left: 25.1%;
+}
+.place-6{
+ position: absolute;
+ top:22.5%;
+ left: 25.1%;
+}
+.place-7{
+ position: absolute;
+ top:42.5%;
+ left: 30.3%;
+}
+.place-8{
+ position: absolute;
+ top:22.5%;
+ left: 30.3%;
+}
+.place-9{
+ position: absolute;
+ top:42.5%;
+ left: 32.9%;
+}
+.place-10{
+ position: absolute;
+ top:22.5%;
+ left: 32.9%;
+}
+.place-11{
+ position: absolute;
+ top:42.5%;
+ left: 38.1%;
+}
+.place-12{
+ position: absolute;
+ top:22.5%;
+ left: 38.1%;
+}
+.place-13{
+ position: absolute;
+ top:42.5%;
+ left: 40.8%;
+}
+.place-14{
+ position: absolute;
+ top:22.5%;
+ left: 40.8%;
+}
+.place-15{
+ position: absolute;
+ top:42.5%;
+ left: 46.0%;
+}
+.place-16{
+ position: absolute;
+ top:22.5%;
+ left: 46.0%;
+}
+.place-17{
+ position: absolute;
+ top:42.5%;
+ left: 48.7%;
+}
+.place-18{
+ position: absolute;
+ top:22.5%;
+ left: 48.7%;
+}
+.place-19{
+ position: absolute;
+ top:42.5%;
+ left: 53.9%;
+}
+.place-20{
+ position: absolute;
+ top:22.5%;
+ left: 53.9%;
+}
+.place-21{
+ position: absolute;
+ top:42.5%;
+ left: 56.6%;
+}
+.place-22{
+ position: absolute;
+ top:22.5%;
+ left: 56.6%;
+}
+.place-23{
+ position: absolute;
+ top:42.5%;
+ left: 61.6%;
+}
+.place-24{
+ position: absolute;
+ top:22.5%;
+ left: 61.6%;
+}
+.place-25{
+ position: absolute;
+ top:42.5%;
+ left: 64.4%;
+}
+.place-26{
+ position: absolute;
+ top:22.5%;
+ left: 64.4%;
+}
+.place-27{
+ position: absolute;
+ top:42.5%;
+ left: 69.5%;
+}
+.place-28{
+ position: absolute;
+ top:22.5%;
+ left: 69.5%;
+}
+.place-29{
+ position: absolute;
+ top:42.5%;
+ left: 72.2%;
+}
+.place-30{
+ position: absolute;
+ top:22.5%;
+ left: 72.2%;
+}
+.place-31{
+ position: absolute;
+ top:42.5%;
+ left: 77.3%;
+}
+.place-32{
+ position: absolute;
+ top:22.5%;
+ left: 77.3%;
+}
+.place-33{
+ position: absolute;
+ top:42.5%;
+ left: 80.0%;
+}
+.place-34{
+ position: absolute;
+ top:22.5%;
+ left: 80.0%;
+}
+.place-35{
+ position: absolute;
+ top:42.5%;
+ left: 85.1%;
+}
+.place-36{
+ position: absolute;
+ top:22.5%;
+ left: 85.1%;
+}
+.place-54{
+ position: absolute;
+ top:70.5%;
+ left: 18.2%;
+}
+.place-53{
+ position: absolute;
+ top:70.5%;
+ left: 22.7%;
+}
+.place-52{
+ position: absolute;
+ top:70.5%;
+ left: 26.2%;
+}
+.place-51{
+ position: absolute;
+ top:70.5%;
+ left: 30.7%;
+}
+.place-50{
+ position: absolute;
+ top:70.5%;
+ left: 34.2%;
+}
+.place-49{
+ position: absolute;
+ top:70.5%;
+ left: 38.1%;
+}
+.place-48{
+ position: absolute;
+ top:70.5%;
+ left: 42.2%;
+}
+.place-47{
+ position: absolute;
+ top:70.5%;
+ left: 46.1%;
+}
+.place-46{
+ position: absolute;
+ top:70.5%;
+ left: 50.2%;
+}
+.place-45{
+ position: absolute;
+ top:70.5%;
+ left: 54.1%;
+}
+.place-44{
+ position: absolute;
+ top:70.5%;
+ left: 58.2%;
+}
+.place-43{
+ position: absolute;
+ top:70.5%;
+ left: 62.1%;
+}
+.place-42{
+ position: absolute;
+ top:70.5%;
+ left: 66%;
+}
+.place-41{
+ position: absolute;
+ top:70.5%;
+ left: 69.7%;
+}
+.place-40{
+ position: absolute;
+ top:70.5%;
+ left: 73.8%;
+}
+.place-39{
+ position: absolute;
+ top:70.5%;
+ left: 77.5%;
+}
+.place-38{
+ position: absolute;
+ top:70.5%;
+ left: 81.6%;
+}
+.place-37{
+ position: absolute;
+ top:70.5%;
+ left: 85.2%;
+}
+.sold-place,
+.free-place{
+	display: block;
+	color: #CB4F4F;
+	font-size: 12px;
+  height: 25px;
+  background-color: rgb(75, 121, 127);
+  width: 21px;
+  text-align: center;
+}
+.wagon-image{
+	width: 100%;
+}
+.available-places-color,
+.selected-places-color,
+.sold-places-color {
+	position: relative;
+	top:2px;
+	border-radius: 2px;
+	width: 13px;
+  height: 13px;
+  display: inline-block;
+
+}
+.selected-places-color{
+  	background-color: #c4c4c4;
+}
+.available-places-color{
+
+  	background-color: #5de078;
+}
+.sold-places-color{
+  background-color: #cb4f4f;
+}
+.place-description{
+  font-size: 14px;
+  /*font-family: Verdana, Arial, sans-serif;*/
+  color: rgb(54, 54, 54);
+}
+
+.available-places-text,
+.selected-places-text,
+.sold-places-text{
+	color: #2E2F67;
+	font-size: 14px;
+	/*font-family: Verdana, Arial, sans-serif;*/
+	margin:0px 13px 0px 0px;
+}
+
+.places-hint {
+	color: rgb(71, 118, 126);
+}
+
+@media(max-width: 767px) {
+	.places-hint {
+		font-size: 13px;
+	}
+
+	.order-generate {
+		font-size: 14px;
+	}
+}
+
+.places-hint-1{
+	display: block;
+	/*font-family: Verdana, Arial, sans-serif;*/
+}
+
+.places-hint-1 span {
+	display: inline-block;
+	background-color: rgb(71, 118, 126);
+	color: white;
+	padding: 2px 5px;
+	animation: appear 300ms ease-in-out forwards;
+	-webkit-animation: appear 300ms ease-in-out forwards;
+}
+
+@-webkit-keyframes appear {
+	from {
+		transform: scale(2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes appear {
+	from {
+		transform: scale(2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.hint-div{
+	padding: 10px;
+}
+.train{
+	border: 1px solid transparent;
+	margin-bottom: 40px;
+	transition: border 300ms;
+	overflow: hidden;
+}
+
+.train:hover {
+	border: 1px solid rgb(46, 47, 103);
+}
+
+.train:active {
+	border: 1px solid rgb(46, 47, 103);
+}
+
+.main-filter{
+    padding:10px 0px 0px 0px;
+		margin-bottom: 40px;
+
+}
+.main-filter div{
+    display:inline-block;
+}
+#searchbox > .main-filter {
+    background-color:#ededed;
+}
+.departure-filter {
+    border-style: solid;
+    border-width: 0px 3px 0px 0px;
+    border-color: #ffffff;
+    display: inline-block;
+    padding: 15px 0px 0px;
+}
+
+#morning-filter,
+#day-filter,
+#evenning-filter {
+    margin-left:-4px;
+}
+
+.departure-filter > div > div {
+    float:left;
+}
+.arrival-filter {
+    padding:0px 0px 0px 20px;
+}
+
+.train-fields,
+.row-places {
+   border-color: rgb(228, 228, 228);
+	 border-style: solid;
+	 border-width: 1px;
+}
+
+.train-fields {
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	border-bottom: none;
+}
+
+@media(max-width: 770px) {
+	.train-fields {
+		padding: 5px 0;
+		font-size: 14px;
+	}
+}
+
+.train-info-header {
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+	justify-content: space-between;
+}
+
+.train-info-header__child {
+	flex-grow: 1;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.row-places {
+	padding-bottom: 5px;
+}
+
+.train-number-field {
+  	border-color: rgb(228, 228, 228);
+	 	border-style: solid;
+	 	border-width: 0px 1px 0px 0px ;
+    font-size:22px;
+}
+
+@media(max-width: 767px) {
+	.train-number-field {
+		font-size: 13px;
+		padding: 0;
+	}
+
+	.place-field {
+		padding: 5px;
+	}
+}
+
+.field > div {
+    display:inline-block;
+}
+.place-field a {
+    display:inline-block;
+}
+.place-field {
+		padding: 15px;
+}
+
+.wagon-in-rect {
+  border: solid;
+  border-width: 1px;
+	padding: 1px 2px;
+}
+
+.placesfreediv{
+    text-align:center;
+}
+
+
+.rounded-sym {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: #ccc;
+    border-radius: 50%;
+}
+.rounded-sym-ended {
+    width: 10px;
+    height: 10px;
+    left:1px;
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    border-style:solid;
+    border-color:#ccc;
+    bottom:0;
+}
+
+.line-start {
+    position: absolute;
+    top: 12px;
+    bottom: 0;
+    left: -12px;
+    width: 7px;
+    border-right: 3px solid #ccc;
+}
+
+.line-end {
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 7px;
+    border-right: 3px solid #ccc;
+    height: 20px;
+}
+
+.week-row .active{
+	background-color: rgb(122, 213, 217);
+	color: #ffffff;
+}
+.time,
+.time-Arrival{
+    font-size:22px;
+    font-weight:600;
+    margin-top:3px;
+    margin-left:10px;
+}
+.time-Arrival{
+     font-size:17px;
+}
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+.wagon-btn {
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.wagon-btn:hover {
+	background-color: rgb(108, 201, 218);
+}
+
+.wagon-btn:hover > div {
+	color: white;
+}
+
+.wagon-btn:hover > span {
+	color: white;
+}
+
+.wagons-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* wagon selection*/
+
+.btn-wagon {
+	position: relative;
+	display: block;
+	width: 100%;
+	color: #47777e;
+	background-color: white;
+	border: 1px solid;
+}
+
+.btn-wagon:hover {
+	background-color: #47777e;
+	color: white;
+	text-decoration: none;
+}
+/*
+.btn-wagon::before,
+.btn-wagon::after  {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	display: inline-block;
+	content: " ";
+	background-color: #47777e;
+}
+
+.btn-wagon::before {
+	width: 2px;
+	height: 5px;
+}
+
+.btn-wagon::after {
+	width: 5px;
+	height: 5px;
+}
+
+.btn-wagon:hover::before,
+.btn-wagon:hover::after {
+	background-color: white;
+}*/
+
+
+.ticket-price::after {
+	display: inline-block;
+	content: " тг";
+	color: inherit;
+}
+
+.train-mob-data {
+	padding: 10px 5px;
+}
+
+.train-mob-data__content {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.train-mobile-title {
+	margin: 0;
+  padding: 10px;
+	font-size: 16px;
+}
+
+.dep-arr-time-mobile  {
+	display: block;
+	font-size: 20px;
+}
+
+.from-to-station-mobile {
+	display: block;
+	font-size: 13px;
+}

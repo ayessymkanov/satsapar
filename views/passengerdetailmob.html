@@ -1,0 +1,98 @@
+﻿<div class="passenger-data">
+    <div class="row odd-row">
+        <div class="col-md-3 col-xs-3 odd-col ta-center">
+            <span>Тариф:</span>
+        </div>
+        <div class="col-md-9 col-xs-9 even-col passenger-info-mobile">
+            <div class="select-wrapper">
+              <select id="tariff-pass1" style="width:100px;" data-bind="value:tarifftype, event:{ change: $root.changetariff.bind($data)}">
+                  <option selected="" value="19">
+                      полный
+                  </option>
+                  <option value="4">
+                      детский с местом до 15 лет
+                  </option>
+              </select>
+            </div>
+            <!-- ko with:birthdate -->
+            <div data-bind="if: visible ">
+                <span class="small-padding">Дата рождения:</span>
+                <div class="select-wrapper">
+                  <select data-bind="options:$root.dateparams.days(), value: bdate.d,optionsCaption:'День'"></select>
+                </div>
+                <div class="select-wrapper">
+                  <select data-bind="options:$root.dateparams.month(), value: bdate.m,optionsCaption:'Месяц'"></select>
+                </div>
+                <div class="select-wrapper">
+                  <select data-bind="options:$root.dateparams.year(), value: bdate.y,optionsCaption:'Год'"></select>
+                </div>
+            </div>
+            <!-- /ko -->
+            <div>
+                <div>
+                    <span class="small-padding">Пол</span>
+                    <div class="select-wrapper">
+                      <select id="polPassenger" type="text" name="polPassenger" data-bind="value:polPassenger">
+                          <option value="">М/Ж</option>
+                          <option value="0">М</option>
+                          <option value="1">Ж</option>
+                      </select>
+                    </div>
+                </div>
+                <div>
+                    <span class="small-padding">Гражданство</span>
+                    <div class="select-wrapper">
+                      <select class="input-mobile" data-bind="options:$root.countries, optionsText:'countryName',optionsValue:'abbrev',value:nationality,optionsCaption:''" class="nationality"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row  even-row">
+        <div class="col-md-3 col-xs-3 odd-col ta-center">
+            <span>Тип документа:</span>
+        </div>
+        <div class="col-md-9 col-xs-9 even-col input-padding passenger-info-mobile">
+          <div class="select-wrapper">
+            <select id="documentType1" class="input-mobile" name="documentType1" data-bind="value: documenttype">
+                <option value="4">Удостоверение личности РК</option>
+                <option value="0">Паспорт гражданина РК</option>
+                <option value="2">Загранпаспорт</option>
+                <option value="3">Паспорт Узбекистана</option>
+                <option value="5">Свидетельство   о   рождении</option>
+                <option value="6">Военный билет</option>
+                <option value="1">Паспорт РФ</option>
+                <option value="7">Паспорт иностранного гражданина</option>
+                <option value="11">Вид на жительство</option>
+                <option value="9">Справка об утере удостоверрения личности/паспорта, временное удостоверение личности</option>
+                <option value="10">Справка об освобождении</option>
+                <option value="8">Удостоверение личности без гражданства</option>
+            </select>
+          </div>
+        </div>
+    </div>
+    <div class="row odd-row">
+        <div class="col-md-3 col-xs-3 odd-col ta-center">
+            <span>Номер документа:</span>
+        </div>
+        <div class="col-md-9 col-xs-9 even-col input-padding passenger-info-mobile">
+            <input type="tel" class="form-control input-mobile" placeholder="123456789" data-bind="value:docnum">
+        </div>
+    </div>
+    <div class="row even-row">
+        <div class="col-md-3 col-xs-3 odd-col ta-center">
+            <span>Полное имя пассажира:</span>
+        </div>
+        <div class="col-md-9 col-xs-9 even-col input-padding passenger-info-mobile ">
+            <div style="display:block;">
+                <input type="text" class="names" placeholder="Фамилия" data-bind="value:lastname">
+            </div>
+            <div style="display:block;">
+                <input type="text" class="names" placeholder="Имя" data-bind="value:firstname">
+            </div>
+            <div style="display:block;">
+                <input type="text" class="names" placeholder="Отчество" data-bind="value:middlename">
+            </div>
+        </div>
+    </div>
+</div>

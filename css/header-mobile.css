@@ -1,0 +1,291 @@
+@media(max-width: 766px) {
+	body {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}﻿
+#populardirection img {
+	display: none !important;
+	padding: 0px;
+}
+#inputdate {
+    margin-left: auto !important;
+}
+
+#searchDate{
+    border: 1px solid #ccc;
+		border-radius: 4px;
+}
+#attention {
+	margin: -3px 5px 0px 0px;
+}
+#rule{
+	padding: 5px 0px 0px;
+}
+#vozvratcol{
+	float: left;
+}
+#vozvratdiv{
+	background-color: rgb(248, 248, 248);
+	background-size: cover;
+	padding: 0px 0px 40px;
+}
+#kaspi{
+	padding: 40px 30px 0px 	0px;
+	float: right;
+}
+.vozvrat{
+	color:#54b676;
+}
+p{
+  /*font-size: 20px;*/
+  /*font-family: Roboto;*/
+  color: rgb(93, 93, 93);
+  line-height: 1.2;
+  text-align: left;
+
+}
+.paymentimage{
+	height:auto;
+	width: auto;
+
+}
+.paymentcol{
+	vertical-align: middle;
+	align-content: center;
+}
+#paymenttype{
+	padding: 45px 0px 125px;
+
+}
+#paymenttitle{
+	margin:0px 0px 100px;
+}
+
+#vibornapr{
+	width: 280px;
+	padding-left: 70px;
+	text-align: left;
+}
+#vibormest {
+	width: 110px;
+}
+#informpass{
+	width: 300px;
+}
+.header{
+	color: #ffffff;
+}
+
+.logobig{
+	float:left;
+	padding-top: 30px;
+	margin-left: 205px;
+}
+.possitiontop {
+    padding-top: 10px;
+}
+#searchbox{
+	background-image: url("../img/navigate.png");
+	background-size: auto;
+	z-index: 10;
+}
+
+.containerallmobile{
+	 margin-right: auto;
+	 margin-top: auto;
+	 background-size: cover;
+	 z-index: -1;
+}
+
+.a{
+	color: rgb(255, 255, 255);
+	line-height: 2;
+  	text-align: center;
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+.searchitems{
+	border:solid  2px ;
+	border-radius: 4px;
+	border-color: #47767e;
+	height: 45px;
+	margin-bottom: 7px;
+}
+#stationsdiv{
+	margin-left: 70px;
+
+	width: 620px;
+}
+#inputdate{
+	margin-left: 19px;
+	width: 178px;
+}
+#inputdate .form-control {
+	background: white url('../img/calendar.png') no-repeat scroll 94% 50%;
+	cursor: pointer;
+    z-index: 1;
+}
+#popularlabel{
+  color: rgb(105, 105, 105);
+  line-height: 1.5;
+
+}
+.stationmobile {
+    width:350px;
+}
+.stationbox,
+#inputdate .form-control {
+	color: #3B666B;
+}
+#checkboxlabel{
+	margin: 5px 0px ;
+	font-size: 10px;
+	line-height: 1;
+    float: right;
+}
+input:checked ~ label,
+input.checked ~ label {
+	background: url('../img/check.png') no-repeat;
+	background-size: cover;
+	z-index: 1000;
+	}
+.taxi{
+	float: right;
+	margin-right: 10px;
+	font-size: 14px;
+	color: rgb(71, 118, 126);
+}
+
+.novisible{
+	visibility: hidden;
+}
+#taxidiv{
+	padding-right: 61px;
+}
+#fromstation{
+	background: white url('../img/station.png') no-repeat scroll 94% 50%;
+}
+#tostation{
+	background: white url('../img/station.png') 	no-repeat scroll 94% 50%;
+}
+#searchrow {
+
+}
+.directionlabel{
+  color: rgb(240, 240, 240);
+  margin-left: 10px;
+}
+#charity{
+	background-image: url('../img/charitybackgr.png');
+	background-size:cover;
+	height: 5px;
+	width: 100%;
+}
+#bottom{
+	background-color:  #47777e;
+	padding: 20px;
+	text-align: center;
+}
+
+#bottom span {
+	display: block;
+	font-weight: bold;
+	color: white
+}
+
+#bottom span:first-child {
+	font-weight: normal;
+}
+
+#populardirection{
+	background-image: url('../img/direcpopback.png');
+	background-size: cover;
+	padding: 28px 35px 30px;
+}
+
+.btn{
+		width: 180px;
+  		border-radius: 3px;
+  		background-color: rgb(108, 201, 218);
+  		height: 40px;
+  		font-size: 20px;
+  		line-height: 1.2;
+  		text-align: center;
+  		border:none;
+}
+
+.rules{
+	font-size:  16px;
+}
+
+
+.btn-info {
+  border-radius: 5px;
+  background-color: rgb(146, 195, 124);
+  width: 218px;
+  height: 39px;
+}
+
+
+
+.input-group-addon{
+	padding: 0px 0px;
+	text-align: center;
+	background-color: transparent;
+	border: none;
+	border-radius: 0px;
+	height: 100%;
+
+}
+input[type="checkbox"], input[type="radio"] {
+    margin: 0px 0px 0px;
+    width: 1px;
+    }
+.form-control::-webkit-input-placeholder {
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control:-moz-placeholder { /* Firefox 18- */
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+.form-control:-ms-input-placeholder {
+   color: #7ea2a8;
+   /*font-family: Roboto;*/
+   font-size: 20px;
+
+}
+
+.leftstart > a  {
+    color:#ffffff;
+}
+
+#searchboxmobile > .row {
+    padding-top:20px;
+}
+
+
+
+#searchboxmobile{
+	background-color: #ffffff;
+	background-size: auto;
+	z-index: 10;
+}
+
+
+
+#info-box button{
+    margin-bottom:10px;
+}

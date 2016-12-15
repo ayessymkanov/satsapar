@@ -1,0 +1,363 @@
+﻿<div>
+    <!-- ko if: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="../css/payment.css" rel="stylesheet" />
+        <div id="searchbox">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <nav class="navbar navbar-default" style="background-image: none; background-color: #3B666B">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                        <img src="img/vibornaprsplitter.png" />
+                                    </li>
+                                    </li>
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                        <img src="img/vibornaprsplitter.png" />
+                                    <li class="passedmenu"><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="img/passedselectedmenus.png" /></li>
+                                    <li class="active"><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row back-to-prev">
+                <!--<a id="tagizmenitnapr"><img src="img/directionmini.png" style="margin:-4px 7px 0px 0px;" />Изменить информацию о пассажирах</a>-->
+            </div>
+            <div id="oplata-block" data-bind="with: orderdetails" style="height:auto;margin:0px;width:auto;">
+                <div class="row middle-title odd-row">
+                    <div class="col-md-12 col-xs-12">
+                        <span>ИНФОРМАЦИЯ О БИЛЕТЕ</span>
+                    </div>
+                </div>
+
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Маршрут:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text:Departure.Station" /> - <span data-bind="text:Arrival.Station" />
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Статус заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: orderStatus">
+
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Дата и время отправления:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: moment(Departure.Date).format('LL')">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Дата и время прибытия:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: moment(Arrival.Date).format('LL')"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер поезда:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: Departure.Train">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер вагона:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: Car.Number"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Места:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="foreach: Tickets">
+                        <!-- ko foreach:Seats -->
+                        <span data-bind="text: $data"></span> <span>  </span>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Тип вагона:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: Car.CarType"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Стоимость:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: payment"></span> <span> тенге</span>
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: orderid"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="oplata-block" data-bind="with: orderdetails" style="height:auto;margin:0px;width:auto;">
+                <div class="row middle-title odd-row ta-center">
+                    <div class="col-md-12 col-xs-12">
+                        <span>ПЕРСОНАЛЬНЫЕ ДАННЫЕ ПАССАЖИРОВ</span>
+                    </div>
+                </div>
+                <!-- ko foreach:Tickets -->
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        ФИО:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text:Passengers[0].Name.split('=').join(' ')" />
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Идентификатор заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: ExpressID">
+
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Тариф без комиссий:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: TariffTotal">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Пассажир <span data-bind="text:$index()+1"></span> сделать возврат:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span><input type="checkbox" data-bind="checked:isNeedReturn" /> </span>
+                    </div>
+                </div>
+
+                <!-- /ko -->
+            </div>
+            <div class="row order-ctrl-btns ta-center">
+                <button class="btn btn-info btn--large" data-bind="click:$root.refresh.bind($root)">Обновить состояние заказа</button>
+
+                <button class="btn btn-info btn--large" data-bind="click:$root.print">Распечатать билет</button>
+                <button class="btn btn-danger btn--large">Возврат</button>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+    </div>
+
+    <!-- /ko -->
+    <!-- ko ifnot: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="css/payment.css" rel="stylesheet" />
+        <div id="searchbox">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <nav class="navbar navbar-default" style="background-image: none; background-color: #3B666B">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                        <img src="img/vibornaprsplitter.png" />
+                                    </li>
+                                    </li>
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                        <img src="img/vibornaprsplitter.png" />
+                                    <li class="passedmenu"><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="img/passedselectedmenus.png" /></li>
+                                    <li class="active"><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row back-to-prev">
+                <!--<a id="tagizmenitnapr"><img src="img/directionmini.png" style="margin:-4px 7px 0px 0px;" />Изменить информацию о пассажирах</a>-->
+            </div>
+            <div id="oplata-block" data-bind="with: orderdetails" style="height:auto;">
+                <div class="row middle-title odd-row">
+                    <div class="col-md-12 col-xs-12">
+                        <span>ИНФОРМАЦИЯ О БИЛЕТЕ</span>
+                    </div>
+                </div>
+
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col ta-center">
+                        Маршрут:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text:Departure.Station" /> - <span data-bind="text:Arrival.Station" />
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Статус заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: orderStatus">
+
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Дата и время отправления:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: moment(Departure.Date).format('LL')">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Дата и время прибытия:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: moment(Arrival.Date).format('LL')"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер поезда:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: Departure.Train">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер вагона:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: Car.Number"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Места:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="foreach: Tickets">
+                        <!-- ko foreach:Seats -->
+                        <span data-bind="text: $data"></span> <span>  </span>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Тип вагона:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: Car.CarType"></span>
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Стоимость:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: payment"></span> <span> тенге</span>
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Номер заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text: orderid"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="oplata-block" data-bind="with: orderdetails" style="height:auto;">
+                <div class="row middle-title odd-row">
+                    <div class="col-md-12 col-xs-12">
+                        <span>ПЕРСОНАЛЬНЫЕ ДАННЫЕ ПАССАЖИРОВ</span>
+                    </div>
+                </div>
+                <!-- ko foreach:Tickets -->
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        ФИО:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span data-bind="text:Passengers[0].Name.split('=').join(' ')" />
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Идентификатор заказа:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: ExpressID">
+
+                    </div>
+                </div>
+                <div class="row payment-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Тариф без комиссий:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col" data-bind="text: TariffTotal">
+
+                    </div>
+                </div>
+                <div class="row payment-row odd-row ta-center">
+                    <div class="col-md-6 col-xs-6 odd-col">
+                        Пассажир <span data-bind="text:$index()+1"></span> сделать возврат:
+                    </div>
+                    <div class="col-md-6 col-xs-6 even-col">
+                        <span><input type="checkbox" data-bind="checked:isNeedReturn" /> </span>
+                    </div>
+                </div>
+
+                <!-- /ko -->
+            </div>
+            <div class="row order-ctrl-btns ta-center">
+                <button class="btn btn-info btn--large" data-bind="click:$root.refresh.bind($root)">Обновить состояние заказа</button>
+
+                <button class="btn btn-info btn--large" data-bind="click:$root.print">Распечатать билет</button>
+                <button class="btn btn-danger btn--large">Возврат</button>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

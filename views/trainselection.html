@@ -1,0 +1,52 @@
+﻿<div>
+    <div class="wagonsinfo" data-bind="with: cars">
+        <!-- <div class=" wagontype"><span data-bind="text:Type"></span></div> -->
+        <!-- <div class="wagonprice">
+            <span class="kztprice"><span data-bind="text: Tariff"></span> KZT</span>
+            <span class="free-total-places">Свободных мест:<span data-bind="text: $root.carlen"></span></span>
+        </div> -->
+        <span class="wagontype" data-bind="text:Type"></span><span class="kztprice"><span data-bind="text: Tariff"></span> KZT</span>
+        <span class="free-total-places">Свободных мест:<span data-bind="text: $root.carlen"></span></span>
+        <div class="wagonselection" id="wagonsel">
+
+            <div id="radios" data-bind="foreach: Cars">
+                <div>
+                    <input class="a"
+                           data-bind="value:$data.Number,click: $root.clickchangecar.bind($root,$data),attr:{'id':'radio'+$index(),'name':'radios',checked: $data===$root.car()}"
+                           type="radio">
+                    <label data-bind="uniqueFor: $index, uniqueMod: 'radio'"><!-- ko text:Number--> вагон <!-- /ko --> (<span class="bracket-hint"><!-- ko text:Places.length -->  мест <!-- /ko --> </span>)</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="place-desc-div">
+        <span class="place-description">Обозначение мест:</span>
+        <div class="available-places-color"></div>
+        <span class="available-places-text">Доступные</span>
+        <div class="selected-places-color"></div>
+        <span class="selected-places-text">Выбранные</span>
+        <div class="sold-places-color"></div>
+        <span class="sold-places-text">Недоступные</span>
+    </div>
+     <!--<div data-bind="with:car">
+        <div class="wagon-picture" data-bind="attr: {id: 'wag-pict' + Number}">
+
+        </div>
+    </div>-->
+    <!-- ko with:car -->
+    <div class="wagon-picture" data-bind="compose : {model:modelpath,view : viewpath,activationData:$parent}">
+    </div>
+    <!-- /ko -->
+   
+    <div class="hint-div">
+        <div class="places-hint" data-bind="with:car">
+            <span class="places-hint-1">Места будут забронированы из выбранного Вами диапазона:<span data-bind="attr: {id:'placDiv' + Number}"></span></span>
+            Проверить места Вы сможете перед оплатой заказа.
+        </div>
+    </div>
+    <div class="order-generate-div">
+        <button class="btn btn-primary order-generate" data-bind="click: $root.sendinfo">
+            Оформить заказ
+        </button>
+    </div>
+</div>

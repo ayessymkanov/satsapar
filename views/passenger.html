@@ -1,0 +1,358 @@
+﻿<div>
+    <!-- ko if: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="../css/passenger.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../css/global.css">
+        <link rel="stylesheet" href="../css/header-mobile.css">
+
+        <div id="searchbox">
+            <div class="row back-to-prev">
+                <a id="tagizmenitnapr" href="#trains">Вернуться к выбору мест</a>
+            </div>
+            <div id="passenger-main-bodymobile" data-bind="with: selection">
+                <div id="train-info" class="ta-center" data-bind="with: train">
+                    <div id="marshrut" class="row odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Маршрут:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: $root.traininfo.PassRouteFrom" /> → <span data-bind="text:$root.traininfo.PassRouteTo" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            Отправл.:
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: moment(DepartureDateTime).format('DD.MM.YYYY')" /> в <span data-bind="text: moment(DepartureDateTime).format('HH.mm.ss')" />
+                        </div>
+                    </div>
+                    <div class="row odd-row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            Прибытия:
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: moment(ArrivalDateTime).format('DD.MM.YYYY')" /> в <span data-bind="text: moment(ArrivalDateTime).format('HH.mm.ss')" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Время в пути:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: TimeInWay" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>№ поезда:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: Number" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>№ вагона:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center" data-bind="with: $root.selection">
+                            <span data-bind="text: carnumber" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Тип вагона:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center" data-bind="with: $root.selection">
+                            <span data-bind="text: car.carsref.ClassService.Type" />  <span data-bind="text: car.CarServiceType" />
+                        </div>
+                    </div>
+                </div>
+                <div id="tariff-full" class="row highlighted-background" data-bind="with: $root.selection">
+                    <div class="col-md-5 col-xs-4 odd-col ta-center">
+                        Итого
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col ta-center" data-bind="with: car">
+                        <span data-bind="calculatetotal: carsref.Tariff" /> <span class="tenge">тенге</span>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-5 col-xs-4 odd-col ta-center">
+                        Пассажиры
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col ta-center">
+                        <span data-bind="text:$root.placetotal" />
+                    </div>
+                </div>
+                <div id="place-range" class="row highlighted-background ta-center">
+                    <div class="col-md-5 col-xs-4 odd-col ta-center">
+                        Границы мест:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col ta-center">
+                        <div style="display: inline-block;vertical-align:top;" data-bind="with: $root.selection">
+                            <span style="display: inline-block;padding: 0px 0px 0px 3px;"><input class="range-box input-box-info" readonly="true" data-bind="value: tempMin" /></span>
+                            <span style="display: inline-block;"><input type="text" class="range-box input-box-info" readonly="true" data-bind="value: tempMax" /></span>
+                            <!--<a id="schema-wagon">схема вагона</a>-->
+                        </div>
+                        <div data-bind="if:$root.selection.selectedplaces.length>1 ">
+                            <label class="control-label2">число нижних и верхних мест:</label>
+                            <select id="typeOfPlaces" name="typeOfPlaces" data-bind="value:typeOfPlaces">
+                                <option value="-">не важно</option>
+                                <option value="0-2">2 верхних </option>
+                                <option value="1-1">1 нижнее, 1 верхнее </option>
+                                <option value="2-0" selected="">2 нижних</option>
+                            </select>
+                        </div>
+                        <div id="desc-text">
+                            Вы предварительно выбрали места: № <span data-bind="getval:$root.selection.selectedplaces" /><br>
+                            <!--<span style="color: #ad4040;font-family: Roboto;">при покупке железногодорожного билета места будут выбраны с указанного вами диапазона.<br></span><br>-->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <span class="passport-caption ta-center">Введите паспортные данные пассажира</span>
+                        <span class="passport-hint attention-hint">
+                            Поле даты рождения обязательно только для международных поездов и для детского тарифа.
+                        </span>
+                    </div>
+                </div>
+                <div data-bind="foreach: $root.placesdetail">
+                    <div class="passenger-id">
+                        Пассажир - <span data-bind="text:num" />
+                    </div>
+                    <div data-bind="compose: 'passengerdetailmob.html'">
+
+                    </div>
+                </div>
+                <div class="row passport-hint attention-hint">Внимательно проверьте введенные данные, прежде чем продолжить покупку билета.</div>
+                <div class="row site-rules" id="rules">
+                    <a data-toggle="collapse" data-target="#rule-info">Подтверждаю, что....<i class="fa fa-expand" /></a>
+                        <p id="rule-info" class="hidden-xs hidden-sm">
+                            Подтверждаю, что с правилами и особенностями оформления заказа, его оплаты, оформления и переоформления электронного проездного документа (билета), возврата неиспользованного проездного документа (билета), заказанного через Интернет, ознакомлен. Я согласен(а) на обработку моих персональных данных и подтверждаю, что реквизиты поездки и персональные данные верны.
+                        </p>
+                        <div id="email-div" class="row ta-center">
+                            <div class="col-md-12 col-xs-12 odd-col">
+                                <p class="site-rules__heading">Укажите ваш e-mail и номер телефона для нашего ответа</p>
+                                <p class="site-rules__p">На вашу почту вышлется электронный билет.</p>
+                                <p class="site-rules__p">На ваш телефон вышлется СМС с информацией о заказе (время отправления, номер вагона и тд.)</p>
+                            </div>
+                            <div class="col-md-12 col-xs-12 even-col" data-bind="with: $root.selection">
+                                <input id="email" type="email" class="form-control" data-bind="value:email" placeholder="email@email.com" required/>
+                                <input id="phone" type="tel" class="form-control" data-bind="value:phone" placeholder="8-7XX-XXX-XX-XX" required>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="agreeCheckbox" /><label for="agreeCheckbox" style="color: #ab4444;">Для подтверждения согласия установите галочку</label>
+                            <div style="padding-top: 20px;">
+                              <button class="btn button-pass payment-btn-mobile" id="visabutton" data-bind="click:$root.processorder.bind($root,0,'visabutton')">Оплата картой Visa..</button>
+                              <button class="btn button-pass payment-btn-mobile" id="kaspibutton" data-bind="click:$root.processorder.bind($root,1,'kaspibutton')">Оплата на kaspi.kz</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+    <!-- ko ifnot: isMobileDevice()==true -->
+    <div class="innercontainer">
+        <link href="../css/header.css" rel="stylesheet" />
+        <link href="../css/passenger.css" rel="stylesheet" />
+        <div id="searchbox">
+            <div class="row visible-lg visible-md">
+                <div class="col-xs-12 col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                    <li class="passedmenu">
+                                        <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                        <img src="img/vibornaprsplitter.png" />
+                                    </li>
+                                    <li class="passedmenu">
+                                        <a href="#trains"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                        <img src="img/passedselectedmenus.png" />
+                                    <li class="active"><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="img/selectedmenubutton.png" /></li>
+                                    <li><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row back-to-prev">
+                <a id="tagizmenitnapr" href="#trains">Вернуться к выбору мест</a>
+            </div>
+            <div id="passenger-main-body" data-bind="with: selection">
+                <div id="train-info" data-bind="with: train">
+                    <div id="marshrut" class="row odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Маршрут:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: $root.traininfo.PassRouteFrom" /> → <span data-bind="text:$root.traininfo.PassRouteTo" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            Дата и время отправления:
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: moment(DepartureDateTime).format('DD.MM.YYYY')" /> в <span data-bind="text: moment(DepartureDateTime).format('HH.mm.ss')" />
+                        </div>
+                    </div>
+                    <div class="row odd-row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            Дата и время прибытия:
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: moment(ArrivalDateTime).format('DD.MM.YYYY')" /> в <span data-bind="text: moment(ArrivalDateTime).format('HH.mm.ss')" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Время в пути:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: TimeInWay" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>№ поезда:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center">
+                            <span data-bind="text: Number" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>№ вагона:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center" data-bind="with: $root.selection">
+                            <span data-bind="text: carnumber" />
+                        </div>
+                    </div>
+                    <div class="row train-info-rows odd-row">
+                        <div class="col-md-5 col-xs-4 odd-col ta-center">
+                            <span>Тип вагона:</span>
+                        </div>
+                        <div class="col-md-7 col-xs-8 even-col ta-center" data-bind="with: $root.selection">
+                            <span data-bind="text: car.carsref.ClassService.Type" />  <span data-bind="text: car.CarServiceType" />
+                        </div>
+                    </div>
+                </div>
+                <div id="place-cost" class="row highlighted-background ta-center" data-bind="with: $root.selection">
+                    <div class="col-md-5 col-xs-4 odd-col">
+                        Стоимость одного места по полному тарифу:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col" data-bind="with: car">
+                        <span data-bind="text: carsref.Tariff"> </span> <span class="tenge">тенге</span>
+                    </div>
+                </div>
+                <div class="row ta-center">
+                    <div class="col-md-5 col-xs-4 odd-col">
+                        Комиссия за билет:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col">
+                        200 <span class="tenge">тенге</span>
+                    </div>
+                </div>
+                <div id="tariff-full" class="row highlighted-background ta-center" data-bind="with: $root.selection">
+                    <div class="col-md-5 col-xs-4 odd-col">
+                        Итого одного места по полному тарифу:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col" data-bind="with: car">
+                        <span data-bind="calculatetotal: carsref.Tariff" /> <span class="tenge">тенге</span>
+                    </div>
+                </div>
+                <div class="row ta-center">
+                    <div class="col-md-5 col-xs-4 odd-col">
+                        Число пассажиров:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col">
+                        <span data-bind="text:$root.placetotal" />
+                    </div>
+                </div>
+                <div id="place-range" class="row highlighted-background ta-center">
+                    <div class="col-md-5 col-xs-4 odd-col">
+                        Границы мест:
+                    </div>
+                    <div class="col-md-7 col-xs-8 even-col">
+                        <div style="display: inline-block;vertical-align:top;" data-bind="with: $root.selection">
+                            <span style="display: inline-block;padding: 0px 0px 0px 3px;"><input class="range-box input-box-info" readonly="true" data-bind="value: tempMin" /></span>
+                            <span style="display: inline-block;"><input type="text" class="range-box input-box-info" readonly="true" data-bind="value: tempMax" /></span>
+                            <!--<a id="schema-wagon">схема вагона</a>-->
+                        </div>
+                        <div data-bind="if:$root.selection.selectedplaces.length>1 ">
+                            <label class="control-label2">число нижних и верхних мест:</label>
+                            <select id="typeOfPlaces" name="typeOfPlaces" data-bind="value:typeOfPlaces">
+                                <option value="-">не важно</option>
+                                <option value="0-2">2 верхних </option>
+                                <option value="1-1">1 нижнее, 1 верхнее </option>
+                                <option value="2-0" selected="">2 нижних</option>
+                            </select>
+                        </div>
+                        <div id="desc-text">
+                            Вы предварительно выбрали места: № <span data-bind="getval:$root.selection.selectedplaces" /><br>
+                            <span style="color: #ad4040;">при покупке железногодорожного билета места будут выбраны с указанного вами диапазона.<br></span><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row enter-pass-data">
+                    <div class="col-xs-12 col-md-12">
+                        <span class="passport-caption">Введите паспортные данные пассажира:</span>
+                        <span class="passport-hint attention-hint">
+                        </span>
+                    </div>
+                </div>
+                <div data-bind="foreach: $root.placesdetail">
+                    <div class="passenger-id">
+                        Пассажир - <span data-bind="text:num" />
+                    </div>
+                    <div data-bind="compose: 'passengerdetail.html'">
+
+                    </div>
+                </div>
+                <div class="row passport-hint attention-hint">Внимательно проверьте введенные данные, прежде чем продолжить покупку билета.</div>
+                <div class="row site-rules" id="rules">
+                    <p class="site-rules__p">
+                        <span class="site-rules__heading">Заполните все поля в паспортных данных пассажиров. </span>
+                        Подтверждаю, что с правилами и особенностями оформления заказа, его оплаты, оформления и переоформления электронного проездного документа (билета), возврата неиспользованного проездного документа (билета), заказанного через Интернет, ознакомлен. <br> Я согласен(а) на обработку моих персональных данных и подтверждаю, что реквизиты поездки и персональные данные верны.
+                    </p>
+                    <div id="email-div" class="">
+                        <p class="site-rules__heading">Укажите ваш e-mail и номер телефона для нашего ответа</p>
+                        <p class="site-rules__p">На вашу почту вышлется электронный билет</p>
+                        <p class="site-rules__p">На ваш телефон вышлется СМС с информацией о заказе (время отправления, номер вагона и тд.)</p>
+                        <div class="email-phone-div" data-bind="with: $root.selection">
+                            <input id="email" type="email" class="input-box-info" data-bind="value:email" placeholder="email@email.com" required/>
+                            <input id="phone" type="tel" class="input-box-info" data-bind="value:phone" placeholder="8-7XX-XXX-XX-XX" required>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="agreeCheckbox" /><label for="agreeCheckbox">Для подтверждения согласия установите галочку</label>
+                        <div class="payment-btns">
+                          <button id="visabutton" class="btn button-pass" data-bind="click:$root.processorder.bind($root,0,'visabutton')">Оплата банковской картой Visa и mastercard</button>
+                          <button id="kaspibutton" class="btn button-pass" data-bind="click:$root.processorder.bind($root,1,'kaspibutton')">Оплата на kaspi.kz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="charity"></div>
+        </div>
+    </div>
+    <!-- /ko -->
+</div>

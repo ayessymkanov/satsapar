@@ -1,0 +1,86 @@
+@media screen and (max-width: 800px){
+    #oplata-block {
+        margin:0 !important;
+    }
+    .odd-col{
+        padding:0px !important;
+    }
+}
+#oplata-block{
+  border-width: 3px;
+  border-color: #edf4f4;
+  border-style: solid;
+  border-radius: 3px;
+  z-index: 700;
+
+}
+
+.middle-title {
+  padding: 40px;
+  font-size: 24px;
+  color: rgb(68, 120, 127);
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 1200;
+}
+.odd-row{
+  background-color: rgba(84, 156, 160, 0.102);
+}
+.payment-row{
+	font-size: 18px;
+  	color: #325358;
+}
+.odd-col{
+	padding-left:  80px;
+}
+.payment-row .even-col, .payment-row .odd-col{
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+
+.payment-row .even-col {
+  border-left: 1px solid #ccc;
+}
+
+.even-col{
+  background-color: rgba(84, 156, 160, 0.051);
+  z-index: 594;
+  padding-left: 25px;
+}
+
+.go-to-payment {
+  padding: 20px;
+}
+
+#kaspi-but{
+	text-align: center;
+}
+
+.order-ctrl-btns {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.order-ctrl-btns .btn {
+  width: auto;
+}
+
+.payment-padding.payment-padding.payment-padding.payment-padding {
+  padding: 20px !important;
+
+}
+
+@media(max-width: 767px) {
+  .payment-padding.payment-padding.payment-padding.payment-padding {
+    padding: 10px !important;
+  }
+
+  .payment-row {
+    font-size: 14px;
+  }
+
+  .middle-title {
+    padding: 20px;
+    font-size: 18px;
+  }
+}

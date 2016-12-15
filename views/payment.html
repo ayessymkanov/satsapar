@@ -1,0 +1,84 @@
+﻿<div class="innercontainer">
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/payment.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/header-mobile.css">
+    <div id="searchbox">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <nav class="navbar navbar-default visible-md visible-lg"  style="background-image: none; background-color: #3B666B">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="passedmenu">
+                                    <a href="#"><div id="vibornapr">ВЫБОР НАПРАВЛЕНИЯ <span class="sr-only">(current)</span></div></a>
+                                    <img src="img/vibornaprsplitter.png" />
+                                </li>
+                                </li>
+                                <li class="passedmenu">
+                                    <a href="#"><div id="vibormest">ВЫБОР МЕСТ</div></a>
+                                    <img src="img/vibornaprsplitter.png" />
+                                <li class="passedmenu"><a href="#"><div id="informpass">ИНФОРМАЦИЯ О ПАССАЖИРАХ</div></a><img src="img/passedselectedmenus.png" /></li>
+                                <li class="active"><a href="#"><div id="oplata">ОПЛАТА</div></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row back-to-prev">
+            <!--<a id="tagizmenitnapr"><img src="img/directionmini.png" style="margin:-4px 7px 0px 0px;" />Изменить информацию о пассажирах</a>-->
+        </div>
+        <div id="oplata-block" data-bind="with: paymentinfo">
+            <div class="row middle-title odd-row">
+                <div class="col-md-12 col-xs-12">
+                    <span>счет на оплату</span>
+                </div>
+            </div>
+            <div class="row payment-row ta-center">
+                <div class="col-md-6 col-xs-6 odd-col payment-padding">
+                    Номер заказа:
+                </div>
+                <div class="col-md-6 col-xs-6 even-col payment-padding" data-bind="text: orderFKCId">
+
+                </div>
+            </div>
+            <div class="row payment-row odd-row ta-center">
+                <div class="col-md-6 col-xs-6 odd-col payment-padding">
+                    Места:
+                </div>
+                <div class="col-md-6 col-xs-6 even-col payment-padding" data-bind="text: places">
+
+                </div>
+            </div>
+            <div class="row payment-row ta-center">
+                <div class="col-md-6 col-xs-6 odd-col payment-padding">
+                    Номер брони для билета:
+                </div>
+                <div class="col-md-6 col-xs-6 even-col payment-padding" data-bind="text: bookingcode">
+
+                </div>
+            </div>
+            <div class="row payment-row odd-row ta-center">
+                <div class="col-md-6 col-xs-6 odd-col payment-padding">
+                    Сумма для оплаты:
+                </div>
+                <div class="col-md-6 col-xs-6 even-col payment-padding" >
+                    <span data-bind="text: totalpayment"></span> тенге
+                </div>
+            </div>
+            <div class="row payment-row go-to-payment" data-bind="compose: htmllink">
+
+            </div>
+        </div>
+        <div class="row" id="charity"></div>
+    </div>
+</div>

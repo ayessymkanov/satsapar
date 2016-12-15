@@ -1,0 +1,556 @@
+﻿<link href="../css/wagon.css" rel="stylesheet"/>    
+<div class="wagon plackart" data-bind="if:currentCarType()===3,visible:currentCarType()===3">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__provodnik"> <span class="title">Проводник</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(20)}">10</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(13)?clickaddplaces.bind($data,'13'):null,css:{taken:!checkAvailability(13)}">13</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(15)?clickaddplaces.bind($data,'15'):null,css:{taken:!checkAvailability(15)}">15</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(18)?clickaddplaces.bind($data,'18'):null,css:{taken:!checkAvailability(18)}">18</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(20)?clickaddplaces.bind($data,'20'):null,css:{taken:!checkAvailability(20)}">20</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(17)?clickaddplaces.bind($data,'17'):null,css:{taken:!checkAvailability(17)}">17</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(19)?clickaddplaces.bind($data,'19'):null,css:{taken:!checkAvailability(19)}">19</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(22)?clickaddplaces.bind($data,'22'):null,css:{taken:!checkAvailability(22)}">22</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(24)?clickaddplaces.bind($data,'24'):null,css:{taken:!checkAvailability(24)}">24</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(21)?clickaddplaces.bind($data,'21'):null,css:{taken:!checkAvailability(21)}">21</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(23)?clickaddplaces.bind($data,'23'):null,css:{taken:!checkAvailability(23)}">23</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(26)?clickaddplaces.bind($data,'26'):null,css:{taken:!checkAvailability(26)}">26</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(28)?clickaddplaces.bind($data,'28'):null,css:{taken:!checkAvailability(28)}">28</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(25)?clickaddplaces.bind($data,'25'):null,css:{taken:!checkAvailability(25)}">25</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(27)?clickaddplaces.bind($data,'27'):null,css:{taken:!checkAvailability(27)}">27</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(30)?clickaddplaces.bind($data,'30'):null,css:{taken:!checkAvailability(30)}">30</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(32)?clickaddplaces.bind($data,'32'):null,css:{taken:!checkAvailability(32)}">32</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(29)?clickaddplaces.bind($data,'29'):null,css:{taken:!checkAvailability(29)}">29</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(31)?clickaddplaces.bind($data,'31'):null,css:{taken:!checkAvailability(31)}">31</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(34)?clickaddplaces.bind($data,'34'):null,css:{taken:!checkAvailability(34)}">34</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(36)?clickaddplaces.bind($data,'36'):null,css:{taken:!checkAvailability(36)}">36</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(33)?clickaddplaces.bind($data,'33'):null,css:{taken:!checkAvailability(33)}">33</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(35)?clickaddplaces.bind($data,'35'):null,css:{taken:!checkAvailability(35)}">35</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Корридор</span></div>
+        <div class="wagon__places__bottom">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(37)?clickaddplaces.bind($data,'37'):null,css:{taken:!checkAvailability(37)}">37</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(38)?clickaddplaces.bind($data,'38'):null,css:{taken:!checkAvailability(38)}">38</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(39)?clickaddplaces.bind($data,'39'):null,css:{taken:!checkAvailability(39)}">39</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(40)?clickaddplaces.bind($data,'40'):null,css:{taken:!checkAvailability(40)}">40</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(41)?clickaddplaces.bind($data,'41'):null,css:{taken:!checkAvailability(41)}">41</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(42)?clickaddplaces.bind($data,'42'):null,css:{taken:!checkAvailability(42)}">42</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(43)?clickaddplaces.bind($data,'43'):null,css:{taken:!checkAvailability(43)}">43</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(44)?clickaddplaces.bind($data,'44'):null,css:{taken:!checkAvailability(44)}">44</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(45)?clickaddplaces.bind($data,'45'):null,css:{taken:!checkAvailability(45)}">45</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(46)?clickaddplaces.bind($data,'46'):null,css:{taken:!checkAvailability(46)}">46</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(47)?clickaddplaces.bind($data,'47'):null,css:{taken:!checkAvailability(47)}">47</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(48)?clickaddplaces.bind($data,'48'):null,css:{taken:!checkAvailability(48)}">48</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(49)?clickaddplaces.bind($data,'49'):null,css:{taken:!checkAvailability(49)}">49</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(50)?clickaddplaces.bind($data,'50'):null,css:{taken:!checkAvailability(50)}">50</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(51)?clickaddplaces.bind($data,'51'):null,css:{taken:!checkAvailability(51)}">51</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(52)?clickaddplaces.bind($data,'52'):null,css:{taken:!checkAvailability(52)}">52</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(53)?clickaddplaces.bind($data,'53'):null,css:{taken:!checkAvailability(53)}">53</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(54)?clickaddplaces.bind($data,'54'):null,css:{taken:!checkAvailability(54)}">54</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="wagon__bath"><span class="title">Туалет</span></div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon coupe" data-bind="if:currentCarType()===0,visible:currentCarType()===0">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__provodnik"> <span class="title">Проводник</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(13)?clickaddplaces.bind($data,'13'):null,css:{taken:!checkAvailability(13)}">13</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(15)?clickaddplaces.bind($data,'15'):null,css:{taken:!checkAvailability(15)}">15</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(18)?clickaddplaces.bind($data,'18'):null,css:{taken:!checkAvailability(18)}">18</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(20)?clickaddplaces.bind($data,'20'):null,css:{taken:!checkAvailability(20)}">20</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(17)?clickaddplaces.bind($data,'17'):null,css:{taken:!checkAvailability(17)}">17</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(19)?clickaddplaces.bind($data,'19'):null,css:{taken:!checkAvailability(19)}">19</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(22)?clickaddplaces.bind($data,'22'):null,css:{taken:!checkAvailability(22)}">22</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(24)?clickaddplaces.bind($data,'24'):null,css:{taken:!checkAvailability(24)}">24</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(21)?clickaddplaces.bind($data,'21'):null,css:{taken:!checkAvailability(21)}">21</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(23)?clickaddplaces.bind($data,'23'):null,css:{taken:!checkAvailability(23)}">23</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(26)?clickaddplaces.bind($data,'26'):null,css:{taken:!checkAvailability(26)}">26</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(28)?clickaddplaces.bind($data,'28'):null,css:{taken:!checkAvailability(28)}">28</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(25)?clickaddplaces.bind($data,'25'):null,css:{taken:!checkAvailability(25)}">25</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(27)?clickaddplaces.bind($data,'27'):null,css:{taken:!checkAvailability(27)}">27</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(30)?clickaddplaces.bind($data,'30'):null,css:{taken:!checkAvailability(30)}">30</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(32)?clickaddplaces.bind($data,'32'):null,css:{taken:!checkAvailability(32)}">32</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(29)?clickaddplaces.bind($data,'29'):null,css:{taken:!checkAvailability(29)}">29</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(31)?clickaddplaces.bind($data,'31'):null,css:{taken:!checkAvailability(31)}">31</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(34)?clickaddplaces.bind($data,'34'):null,css:{taken:!checkAvailability(34)}">34</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(36)?clickaddplaces.bind($data,'36'):null,css:{taken:!checkAvailability(36)}">36</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(33)?clickaddplaces.bind($data,'33'):null,css:{taken:!checkAvailability(33)}">33</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(35)?clickaddplaces.bind($data,'35'):null,css:{taken:!checkAvailability(35)}">35</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__bath"><span class="title">Туалет</span></div>
+    <div class="wagon__tambur"><span class="title">Тамбур    </span></div>
+</div>
+
+    <div data-bind="if:currentCarType()===7,visible:currentCarType()===7">
+    <div  data-bind="foreach:rootData().car().Places">
+        <div class="cell__place" style="display:inline"> <a style="display: inline" data-bind="click:$root.checkAvailability(parseInt($data))?$root.clickaddplaces.bind($root,parseInt($data)):null,css:{taken:!$root.checkAvailability(parseInt($data))},text:$data"></a></div>
+    </div>
+    </div>
+
+
+<div class="wagon talgo" data-bind="if:currentCarType()===4,visible:currentCarType()===4">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(13)?clickaddplaces.bind($data,'13'):null,css:{taken:!checkAvailability(13)}">13</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(15)?clickaddplaces.bind($data,'15'):null,css:{taken:!checkAvailability(15)}">15</a></div>
+            </div>
+            
+
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon sv" data-bind="if:currentCarType()===1,visible:currentCarType()===1">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon sv" data-bind="if:currentCarType()===8,visible:currentCarType()===8">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place taken"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon common chinese" data-bind="if:currentCarType()===5,visible:currentCarType()===5">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__provodnik"> <span class="title">Проводник</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}" >2</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}" >1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(15)?clickaddplaces.bind($data,'15'):null,css:{taken:!checkAvailability(15)}">15</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(18)?clickaddplaces.bind($data,'18'):null,css:{taken:!checkAvailability(18)}">18</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(17)?clickaddplaces.bind($data,'17'):null,css:{taken:!checkAvailability(17)}">17</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(13)?clickaddplaces.bind($data,'13'):null,css:{taken:!checkAvailability(13)}">13</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(21)?clickaddplaces.bind($data,'21'):null,css:{taken:!checkAvailability(21)}">21</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(24)?clickaddplaces.bind($data,'24'):null,css:{taken:!checkAvailability(24)}">24</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(20)?clickaddplaces.bind($data,'20'):null,css:{taken:!checkAvailability(20)}">20</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(23)?clickaddplaces.bind($data,'23'):null,css:{taken:!checkAvailability(23)}">23</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(19)?clickaddplaces.bind($data,'19'):null,css:{taken:!checkAvailability(19)}">19</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(22)?clickaddplaces.bind($data,'22'):null,css:{taken:!checkAvailability(22)}">22  </a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(27)?clickaddplaces.bind($data,'27'):null,css:{taken:!checkAvailability(27)}">27</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(30)?clickaddplaces.bind($data,'30'):null,css:{taken:!checkAvailability(30)}">30</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(26)?clickaddplaces.bind($data,'26'):null,css:{taken:!checkAvailability(26)}">26</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(29)?clickaddplaces.bind($data,'29'):null,css:{taken:!checkAvailability(29)}">29</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(25)?clickaddplaces.bind($data,'25'):null,css:{taken:!checkAvailability(25)}">25</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(28)?clickaddplaces.bind($data,'28'):null,css:{taken:!checkAvailability(28)}">28    </a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(33)?clickaddplaces.bind($data,'33'):null,css:{taken:!checkAvailability(33)}">33</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(36)?clickaddplaces.bind($data,'36'):null,css:{taken:!checkAvailability(36)}">36</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(32)?clickaddplaces.bind($data,'32'):null,css:{taken:!checkAvailability(32)}">32</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(35)?clickaddplaces.bind($data,'35'):null,css:{taken:!checkAvailability(35)}">35</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(31)?clickaddplaces.bind($data,'31'):null,css:{taken:!checkAvailability(31)}">31</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(34)?clickaddplaces.bind($data,'34'):null,css:{taken:!checkAvailability(34)}">34</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(39)?clickaddplaces.bind($data,'39'):null,css:{taken:!checkAvailability(39)}">39</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(42)?clickaddplaces.bind($data,'42'):null,css:{taken:!checkAvailability(42)}">42</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(38)?clickaddplaces.bind($data,'38'):null,css:{taken:!checkAvailability(38)}">38</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(41)?clickaddplaces.bind($data,'41'):null,css:{taken:!checkAvailability(41)}">41</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(37)?clickaddplaces.bind($data,'37'):null,css:{taken:!checkAvailability(37)}">37</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(40)?clickaddplaces.bind($data,'40'):null,css:{taken:!checkAvailability(40)}">40</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(45)?clickaddplaces.bind($data,'45'):null,css:{taken:!checkAvailability(45)}">45</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(48)?clickaddplaces.bind($data,'48'):null,css:{taken:!checkAvailability(48)}">48</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(44)?clickaddplaces.bind($data,'44'):null,css:{taken:!checkAvailability(44)}">44</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(47)?clickaddplaces.bind($data,'47'):null,css:{taken:!checkAvailability(47)}">47</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(43)?clickaddplaces.bind($data,'43'):null,css:{taken:!checkAvailability(43)}">43</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(46)?clickaddplaces.bind($data,'46'):null,css:{taken:!checkAvailability(46)}">46</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(51)?clickaddplaces.bind($data,'51'):null,css:{taken:!checkAvailability(51)}">51</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(54)?clickaddplaces.bind($data,'54'):null,css:{taken:!checkAvailability(54)}">54</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(50)?clickaddplaces.bind($data,'50'):null,css:{taken:!checkAvailability(50)}">50</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(53)?clickaddplaces.bind($data,'53'):null,css:{taken:!checkAvailability(53)}">53</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(49)?clickaddplaces.bind($data,'49'):null,css:{taken:!checkAvailability(49)}">49</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(52)?clickaddplaces.bind($data,'52'):null,css:{taken:!checkAvailability(52)}">52</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(57)?clickaddplaces.bind($data,'57'):null,css:{taken:!checkAvailability(57)}">57</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(60)?clickaddplaces.bind($data,'60'):null,css:{taken:!checkAvailability(60)}">60</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(56)?clickaddplaces.bind($data,'56'):null,css:{taken:!checkAvailability(56)}">56</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(59)?clickaddplaces.bind($data,'59'):null,css:{taken:!checkAvailability(59)}">59</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(55)?clickaddplaces.bind($data,'55'):null,css:{taken:!checkAvailability(55)}">55</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(58)?clickaddplaces.bind($data,'58'):null,css:{taken:!checkAvailability(58)}">58</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__bath"><span class="title">Туалет</span></div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon sv" data-bind="if:currentCarType()===5,visible:currentCarType()===6">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__provodnik"> <span class="title">Проводник</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}">1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}">2</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(18)?clickaddplaces.bind($data,'18'):null,css:{taken:!checkAvailability(18)}">18</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(20)?clickaddplaces.bind($data,'20'):null,css:{taken:!checkAvailability(20)}">20</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(22)?clickaddplaces.bind($data,'22'):null,css:{taken:!checkAvailability(22)}">22</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(24)?clickaddplaces.bind($data,'24'):null,css:{taken:!checkAvailability(24)}">24</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(26)?clickaddplaces.bind($data,'26'):null,css:{taken:!checkAvailability(26)}">26</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+    </div>
+    <div class="wagon__bath"><span class="title">Туалет</span></div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
+
+<div class="wagon common" data-bind="if:currentCarType()===10,visible:currentCarType()===10">
+    <div class="wagon__tambur"> <span class="title">Тамбур</span></div>
+    <div class="wagon__bath"> <span class="title">Туалет</span></div>
+    <div class="wagon__provodnik"> <span class="title">Проводник</span></div>
+    <div class="wagon__places">
+        <div class="wagon__places__upper">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(3)?clickaddplaces.bind($data,'3'):null,css:{taken:!checkAvailability(3)}">3</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(6)?clickaddplaces.bind($data,'6'):null,css:{taken:!checkAvailability(6)}">6</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(2)?clickaddplaces.bind($data,'2'):null,css:{taken:!checkAvailability(2)}" >2</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(5)?clickaddplaces.bind($data,'5'):null,css:{taken:!checkAvailability(5)}">5</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(1)?clickaddplaces.bind($data,'1'):null,css:{taken:!checkAvailability(1)}" >1</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(4)?clickaddplaces.bind($data,'4'):null,css:{taken:!checkAvailability(4)}">4</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(9)?clickaddplaces.bind($data,'9'):null,css:{taken:!checkAvailability(9)}">9</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(12)?clickaddplaces.bind($data,'12'):null,css:{taken:!checkAvailability(12)}">12</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(8)?clickaddplaces.bind($data,'8'):null,css:{taken:!checkAvailability(8)}">8</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(11)?clickaddplaces.bind($data,'11'):null,css:{taken:!checkAvailability(11)}">11</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(7)?clickaddplaces.bind($data,'7'):null,css:{taken:!checkAvailability(7)}">7</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(10)?clickaddplaces.bind($data,'10'):null,css:{taken:!checkAvailability(10)}">10</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(15)?clickaddplaces.bind($data,'15'):null,css:{taken:!checkAvailability(15)}">15</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(18)?clickaddplaces.bind($data,'18'):null,css:{taken:!checkAvailability(18)}">18</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(14)?clickaddplaces.bind($data,'14'):null,css:{taken:!checkAvailability(14)}">14</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(17)?clickaddplaces.bind($data,'17'):null,css:{taken:!checkAvailability(17)}">17</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(13)?clickaddplaces.bind($data,'13'):null,css:{taken:!checkAvailability(13)}">13</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(16)?clickaddplaces.bind($data,'16'):null,css:{taken:!checkAvailability(16)}">16</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(21)?clickaddplaces.bind($data,'21'):null,css:{taken:!checkAvailability(21)}">21</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(24)?clickaddplaces.bind($data,'24'):null,css:{taken:!checkAvailability(24)}">24</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(20)?clickaddplaces.bind($data,'20'):null,css:{taken:!checkAvailability(20)}">20</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(23)?clickaddplaces.bind($data,'23'):null,css:{taken:!checkAvailability(23)}">23</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(19)?clickaddplaces.bind($data,'19'):null,css:{taken:!checkAvailability(19)}">19</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(22)?clickaddplaces.bind($data,'22'):null,css:{taken:!checkAvailability(22)}">22  </a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(27)?clickaddplaces.bind($data,'27'):null,css:{taken:!checkAvailability(27)}">27</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(30)?clickaddplaces.bind($data,'30'):null,css:{taken:!checkAvailability(30)}">30</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(26)?clickaddplaces.bind($data,'26'):null,css:{taken:!checkAvailability(26)}">26</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(29)?clickaddplaces.bind($data,'29'):null,css:{taken:!checkAvailability(29)}">29</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(25)?clickaddplaces.bind($data,'25'):null,css:{taken:!checkAvailability(25)}">25</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(28)?clickaddplaces.bind($data,'28'):null,css:{taken:!checkAvailability(28)}">28    </a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(33)?clickaddplaces.bind($data,'33'):null,css:{taken:!checkAvailability(33)}">33</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(36)?clickaddplaces.bind($data,'36'):null,css:{taken:!checkAvailability(36)}">36</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(32)?clickaddplaces.bind($data,'32'):null,css:{taken:!checkAvailability(32)}">32</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(35)?clickaddplaces.bind($data,'35'):null,css:{taken:!checkAvailability(35)}">35</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(31)?clickaddplaces.bind($data,'31'):null,css:{taken:!checkAvailability(31)}">31</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(34)?clickaddplaces.bind($data,'34'):null,css:{taken:!checkAvailability(34)}">34</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(39)?clickaddplaces.bind($data,'39'):null,css:{taken:!checkAvailability(39)}">39</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(42)?clickaddplaces.bind($data,'42'):null,css:{taken:!checkAvailability(42)}">42</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(38)?clickaddplaces.bind($data,'38'):null,css:{taken:!checkAvailability(38)}">38</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(41)?clickaddplaces.bind($data,'41'):null,css:{taken:!checkAvailability(41)}">41</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(37)?clickaddplaces.bind($data,'37'):null,css:{taken:!checkAvailability(37)}">37</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(40)?clickaddplaces.bind($data,'40'):null,css:{taken:!checkAvailability(40)}">40</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(45)?clickaddplaces.bind($data,'45'):null,css:{taken:!checkAvailability(45)}">45</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(48)?clickaddplaces.bind($data,'48'):null,css:{taken:!checkAvailability(48)}">48</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(44)?clickaddplaces.bind($data,'44'):null,css:{taken:!checkAvailability(44)}">44</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(47)?clickaddplaces.bind($data,'47'):null,css:{taken:!checkAvailability(47)}">47</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(43)?clickaddplaces.bind($data,'43'):null,css:{taken:!checkAvailability(43)}">43</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(46)?clickaddplaces.bind($data,'46'):null,css:{taken:!checkAvailability(46)}">46</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(51)?clickaddplaces.bind($data,'51'):null,css:{taken:!checkAvailability(51)}">51</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(54)?clickaddplaces.bind($data,'54'):null,css:{taken:!checkAvailability(54)}">54</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(50)?clickaddplaces.bind($data,'50'):null,css:{taken:!checkAvailability(50)}">50</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(53)?clickaddplaces.bind($data,'53'):null,css:{taken:!checkAvailability(53)}">53</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(49)?clickaddplaces.bind($data,'49'):null,css:{taken:!checkAvailability(49)}">49</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(52)?clickaddplaces.bind($data,'52'):null,css:{taken:!checkAvailability(52)}">52</a></div>
+            </div>
+        </div>
+        <div class="wagon__places__corridor"> <span>Коридор</span></div>
+        <div class="wagon__places__bottom">
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(79)?clickaddplaces.bind($data,'79'):null,css:{taken:!checkAvailability(79)}">79</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(80)?clickaddplaces.bind($data,'80'):null,css:{taken:!checkAvailability(80)}">80</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(81)?clickaddplaces.bind($data,'81'):null,css:{taken:!checkAvailability(81)}">81</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(76)?clickaddplaces.bind($data,'76'):null,css:{taken:!checkAvailability(76)}">76</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(77)?clickaddplaces.bind($data,'77'):null,css:{taken:!checkAvailability(77)}">77</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(78)?clickaddplaces.bind($data,'78'):null,css:{taken:!checkAvailability(78)}">78</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(73)?clickaddplaces.bind($data,'73'):null,css:{taken:!checkAvailability(73)}">73</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(74)?clickaddplaces.bind($data,'74'):null,css:{taken:!checkAvailability(74)}">74</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(75)?clickaddplaces.bind($data,'75'):null,css:{taken:!checkAvailability(75)}">75</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(70)?clickaddplaces.bind($data,'70'):null,css:{taken:!checkAvailability(70)}">70</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(71)?clickaddplaces.bind($data,'71'):null,css:{taken:!checkAvailability(71)}">71</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(72)?clickaddplaces.bind($data,'72'):null,css:{taken:!checkAvailability(72)}">72</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(67)?clickaddplaces.bind($data,'67'):null,css:{taken:!checkAvailability(67)}">67</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(68)?clickaddplaces.bind($data,'68'):null,css:{taken:!checkAvailability(68)}">68</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(69)?clickaddplaces.bind($data,'69'):null,css:{taken:!checkAvailability(69)}">69</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(64)?clickaddplaces.bind($data,'64'):null,css:{taken:!checkAvailability(64)}">64</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(65)?clickaddplaces.bind($data,'65'):null,css:{taken:!checkAvailability(65)}">65</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(66)?clickaddplaces.bind($data,'66'):null,css:{taken:!checkAvailability(66)}">66</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(61)?clickaddplaces.bind($data,'61'):null,css:{taken:!checkAvailability(61)}">61</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(62)?clickaddplaces.bind($data,'62'):null,css:{taken:!checkAvailability(62)}">62</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(63)?clickaddplaces.bind($data,'63'):null,css:{taken:!checkAvailability(63)}">63</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(58)?clickaddplaces.bind($data,'58'):null,css:{taken:!checkAvailability(58)}">58</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(59)?clickaddplaces.bind($data,'59'):null,css:{taken:!checkAvailability(59)}">59</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(60)?clickaddplaces.bind($data,'60'):null,css:{taken:!checkAvailability(60)}">60</a></div>
+            </div>
+            <div class="cell">
+                <div class="cell__place"> <a data-bind="click:checkAvailability(55)?clickaddplaces.bind($data,'55'):null,css:{taken:!checkAvailability(55)}">55</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(56)?clickaddplaces.bind($data,'56'):null,css:{taken:!checkAvailability(56)}">56</a></div>
+                <div class="cell__place"> <a data-bind="click:checkAvailability(57)?clickaddplaces.bind($data,'57'):null,css:{taken:!checkAvailability(57)}">57</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="wagon__bath"><span class="title">Туалет</span></div>
+    <div class="wagon__tambur"><span class="title">Тамбур</span></div>
+</div>
